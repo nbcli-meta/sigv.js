@@ -40,6 +40,19 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"bgcolor" : [ 0.305882352941176, 0.337254901960784, 0.345098039215686, 1.0 ],
+					"color" : [ 0.305882352941176, 0.337254901960784, 0.345098039215686, 1.0 ],
+					"id" : "obj-13",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patching_rect" : [ 52.0, 162.0, 47.0, 23.0 ],
+					"text" : "pattern"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-11",
 					"maxclass" : "comment",
 					"numinlets" : 1,
@@ -55,8 +68,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 396.5, 86.0, 59.0, 21.0 ],
-					"text" : "synthesis"
+					"patching_rect" : [ 388.5, 86.0, 73.5, 21.0 ],
+					"text" : "Synthesis B."
 				}
 
 			}
@@ -66,8 +79,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 122.5, 86.0, 59.0, 21.0 ],
-					"text" : "synthesis"
+					"patching_rect" : [ 114.5, 86.0, 79.0, 21.0 ],
+					"text" : "Synthesis A."
 				}
 
 			}
@@ -149,8 +162,7 @@
 					"id" : "obj-1",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"numoutlets" : 0,
 					"patching_rect" : [ 114.0, 46.0, 76.0, 23.0 ],
 					"text" : "amplification"
 				}
@@ -160,92 +172,99 @@
 		"lines" : [  ],
 		"dependency_cache" : [ 			{
 				"name" : "amplification.maxpat",
-				"bootpath" : "~/Desktop/material energies",
+				"bootpath" : "~/sigv.js/sigv-js-sys/material energies",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "sensorial.envelope.maxpat",
-				"bootpath" : "~/Desktop/material energies",
+				"bootpath" : "~/sigv.js/sigv-js-sys/material energies",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "shape.succession.maxpat",
-				"bootpath" : "~/Desktop/material energies",
+				"bootpath" : "~/sigv.js/sigv-js-sys/material energies",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "atmosphere.maxpat",
-				"bootpath" : "~/Desktop/material energies",
-				"patcherrelativepath" : ".",
+				"bootpath" : "~/sigv.js/sigv-js-sys/material energies/atmosphere",
+				"patcherrelativepath" : "./atmosphere",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "troposhere.maxpat",
-				"bootpath" : "~/Desktop/material energies",
-				"patcherrelativepath" : ".",
+				"bootpath" : "~/sigv.js/sigv-js-sys/material energies/atmosphere",
+				"patcherrelativepath" : "./atmosphere",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "stratosphere.maxpat",
-				"bootpath" : "~/Desktop/material energies",
-				"patcherrelativepath" : ".",
+				"bootpath" : "~/sigv.js/sigv-js-sys/material energies/atmosphere",
+				"patcherrelativepath" : "./atmosphere",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "mesosphere.maxpat",
-				"bootpath" : "~/Desktop/material energies",
-				"patcherrelativepath" : ".",
+				"bootpath" : "~/sigv.js/sigv-js-sys/material energies/atmosphere",
+				"patcherrelativepath" : "./atmosphere",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "thermosphere.maxpat",
-				"bootpath" : "~/Desktop/material energies",
-				"patcherrelativepath" : ".",
+				"bootpath" : "~/sigv.js/sigv-js-sys/material energies/atmosphere",
+				"patcherrelativepath" : "./atmosphere",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "exosphere.maxpat",
-				"bootpath" : "~/Desktop/material energies",
-				"patcherrelativepath" : ".",
+				"bootpath" : "~/sigv.js/sigv-js-sys/material energies/atmosphere",
+				"patcherrelativepath" : "./atmosphere",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "modular.maxpat",
-				"bootpath" : "~/Desktop/material energies",
-				"patcherrelativepath" : ".",
+				"bootpath" : "~/sigv.js/sigv-js-sys/material energies/modular",
+				"patcherrelativepath" : "./modular",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "source.maxpat",
-				"bootpath" : "~/Desktop/material energies",
-				"patcherrelativepath" : ".",
+				"bootpath" : "~/sigv.js/sigv-js-sys/material energies/modular",
+				"patcherrelativepath" : "./modular",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "processor.maxpat",
-				"bootpath" : "~/Desktop/material energies",
-				"patcherrelativepath" : ".",
+				"bootpath" : "~/sigv.js/sigv-js-sys/material energies/modular",
+				"patcherrelativepath" : "./modular",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "compound.maxpat",
-				"bootpath" : "~/Desktop/material energies",
-				"patcherrelativepath" : ".",
+				"bootpath" : "~/sigv.js/sigv-js-sys/material energies/modular",
+				"patcherrelativepath" : "./modular",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "pattern.maxpat",
+				"bootpath" : "~/sigv.js/sigv-js-sys/material energies/pattern",
+				"patcherrelativepath" : "./pattern",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -281,10 +300,10 @@
 , 			{
 				"name" : "dvnt2",
 				"default" : 				{
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"elementcolor" : [ 0.681193, 0.750541, 0.758255, 1.0 ],
 					"color" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"elementcolor" : [ 0.681193, 0.750541, 0.758255, 1.0 ]
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -330,10 +349,10 @@
 , 			{
 				"name" : "myrPattr",
 				"default" : 				{
-					"fontface" : [ 0 ],
-					"fontsize" : [ 12.0 ],
 					"accentcolor" : [ 0.945098, 0.913725, 0.407843, 1.0 ],
-					"fontname" : [ "Arial" ]
+					"fontsize" : [ 12.0 ],
+					"fontname" : [ "Arial" ],
+					"fontface" : [ 0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -360,8 +379,8 @@
 , 			{
 				"name" : "myrSubpatch",
 				"default" : 				{
-					"fontsize" : [ 12.0 ],
 					"accentcolor" : [ 0.082353, 0.431373, 0.411765, 1.0 ],
+					"fontsize" : [ 12.0 ],
 					"fontname" : [ "Arial" ]
 				}
 ,
@@ -398,8 +417,8 @@
 , 			{
 				"name" : "newobjYellow-1",
 				"default" : 				{
-					"fontsize" : [ 12.059008 ],
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+					"fontsize" : [ 12.059008 ]
 				}
 ,
 				"parentstyle" : "",
