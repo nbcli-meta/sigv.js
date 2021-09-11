@@ -57,18 +57,6 @@ function lorenz() {
   var lorenz = this.patcher.newdefault(0,0,'lorenz-system');
 }
 
-function rossler() {
-  var rossler = this.patcher.newdefault(0,0,'rossler');
-}
-
-function chua() {
-  var chua = this.patcher.newdefault(0,0,'chua');
-}
-
-function qi() {
-  var qi = this.patcher.newdefault(0,0,'qi');
-}
-
 // init systems environment
 function light() {
   var light = this.patcher.newdefault(0,0,'light');
@@ -82,20 +70,8 @@ function bfg() {
   var bfg = this.patcher.newdefault(0,0,'bfg');
 }
 
-function orca() {
-  var orca = this.patcher.newdefault(0,0,'orca');
-}
-
-function seq() {
-  var seq = this.patcher.newdefault(0,0,'seq');
-}
-
 function grain() {
   var grain = this.patcher.newdefault(0,0,'grain');
-}
-
-function opz() {
-  var opz = this.patcher.newdefault(0,0,'opz');
 }
 
 function osc() {
@@ -114,21 +90,6 @@ function som() {
   var so = this.patcher.newdefault(0,0,'som');
 }
 
-function shell() {
-  var shell = this.patcher.newdefault(0,0,'shell');
-}
-
-// Composites
-
-function dotgrid() {
-  var dotgrid = this.patcher.newdefault(0,0,'dot-grid');
-}
-
-// Frameworks
-
-function material_energies() {
-  var material_energies = this.patcher.newdefault(0,0,'material_energies');
-  var pcontrol = this.patcher.newdefault(0,0,'pcontrol');
-  this.patcher.connect(pcontrol,0,material_energies,0);
-  pcontrol.open();
+function terminal() {
+  var terminal = this.patcher.newdefault(0,0,'terminal');
 }
