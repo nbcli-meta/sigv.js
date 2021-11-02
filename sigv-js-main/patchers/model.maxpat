@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 11,
+			"minor" : 2,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -112,26 +112,14 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-44",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "jit_gl_texture", "" ],
-					"patching_rect" : [ 50.400000000000091, 352.0, 124.0, 23.0 ],
-					"text" : "jit.gl.texture @adapt 0"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-30",
-					"linecount" : 2,
+					"linecount" : 3,
 					"maxclass" : "newobj",
 					"numinlets" : 9,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_matrix", "" ],
-					"patching_rect" : [ 33.900000000000091, 391.0, 292.5, 37.0 ],
-					"text" : "jit.gl.mesh monde @enable 0 @depth_enable 1 @lighting_enable 1 @animmode local"
+					"patching_rect" : [ 33.900000000000091, 391.0, 281.0, 52.0 ],
+					"text" : "jit.gl.mesh monde @enable 0 @depth_enable 1 @lighting_enable 1 @animmode local @draw_mode triangles"
 				}
 
 			}
@@ -179,8 +167,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_matrix", "" ],
-					"patching_rect" : [ 50.400000000000091, 308.0, 276.0, 37.0 ],
-					"text" : "jit.gl.model @depth_enable 1 @lighting_enable 1 @blend_enable 1 @matrixoutput 1"
+					"patching_rect" : [ 50.400000000000091, 308.0, 304.599999999999909, 37.0 ],
+					"text" : "jit.gl.model monde @depth_enable 1 @lighting_enable 1 @blend_enable 1 @matrixoutput 1"
 				}
 
 			}
@@ -201,26 +189,9 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-44", 0 ],
-					"source" : [ "obj-32", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-30", 2 ],
-					"midpoints" : [ 59.900000000000091, 382.5, 111.775000000000091, 382.5 ],
-					"order" : 0,
-					"source" : [ "obj-44", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-30", 0 ],
-					"midpoints" : [ 59.900000000000091, 382.5, 43.400000000000091, 382.5 ],
-					"order" : 1,
-					"source" : [ "obj-44", 0 ]
+					"midpoints" : [ 59.900000000000091, 367.5, 43.400000000000091, 367.5 ],
+					"source" : [ "obj-32", 0 ]
 				}
 
 			}
@@ -276,14 +247,6 @@
 					"destination" : [ "obj-30", 0 ],
 					"midpoints" : [ 138.900000000000091, 301.0, 43.400000000000091, 301.0 ],
 					"source" : [ "obj-56", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-44", 0 ],
-					"midpoints" : [ 257.900000000000091, 302.0, 59.900000000000091, 302.0 ],
-					"source" : [ "obj-72", 0 ]
 				}
 
 			}
@@ -357,10 +320,10 @@
 , 			{
 				"name" : "dvnt2",
 				"default" : 				{
-					"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"elementcolor" : [ 0.681193, 0.750541, 0.758255, 1.0 ],
+					"color" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"color" : [ 0.0, 0.0, 0.0, 1.0 ]
+					"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"elementcolor" : [ 0.681193, 0.750541, 0.758255, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -407,9 +370,9 @@
 				"name" : "myrPattr",
 				"default" : 				{
 					"fontsize" : [ 12.0 ],
-					"accentcolor" : [ 0.945098, 0.913725, 0.407843, 1.0 ],
 					"fontname" : [ "Arial" ],
-					"fontface" : [ 0 ]
+					"fontface" : [ 0 ],
+					"accentcolor" : [ 0.945098, 0.913725, 0.407843, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -437,8 +400,8 @@
 				"name" : "myrSubpatch",
 				"default" : 				{
 					"fontsize" : [ 12.0 ],
-					"accentcolor" : [ 0.082353, 0.431373, 0.411765, 1.0 ],
-					"fontname" : [ "Arial" ]
+					"fontname" : [ "Arial" ],
+					"accentcolor" : [ 0.082353, 0.431373, 0.411765, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -484,16 +447,13 @@
 , 			{
 				"name" : "sigv.js",
 				"default" : 				{
-					"accentcolor" : [ 0.07799056917429, 0.098447218537331, 0.10713404417038, 1.0 ],
-					"editing_bgcolor" : [ 0.049247920513153, 0.058372475206852, 0.068464912474155, 1.0 ],
-					"bgcolor" : [ 0.070588235294118, 0.105882352941176, 0.164705882352941, 1.0 ],
-					"fontname" : [ "Lato" ],
-					"elementcolor" : [ 0.57438737154007, 0.665937542915344, 0.915809035301208, 1.0 ],
-					"selectioncolor" : [ 0.45281594991684, 0.528640389442444, 0.598021566867828, 1.0 ],
-					"textcolor_inverse" : [ 0.67843137254902, 0.713725490196078, 0.76078431372549, 1.0 ],
-					"locked_bgcolor" : [ 0.049247920513153, 0.058372475206852, 0.068464912474155, 1.0 ],
 					"color" : [ 0.0, 0.431372549019608, 1.0, 1.0 ],
 					"clearcolor" : [ 0.07058823529, 0.1058823529, 0.1647058824, 1.0 ],
+					"textcolor_inverse" : [ 0.67843137254902, 0.713725490196078, 0.76078431372549, 1.0 ],
+					"selectioncolor" : [ 0.45281594991684, 0.528640389442444, 0.598021566867828, 1.0 ],
+					"locked_bgcolor" : [ 0.049247920513153, 0.058372475206852, 0.068464912474155, 1.0 ],
+					"bgcolor" : [ 0.070588235294118, 0.105882352941176, 0.164705882352941, 1.0 ],
+					"fontname" : [ "Lato" ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.07799056917429, 0.098447218537331, 0.10713404417038, 1.0 ],
@@ -501,8 +461,11 @@
 						"color" : [ 0.2, 0.2, 0.2, 1.0 ]
 					}
 ,
-					"textcolor" : [ 0.6, 0.772549019607843, 1.0, 1.0 ],
-					"patchlinecolor" : [ 0.086274509803922, 0.266666666666667, 0.345098039215686, 1.0 ]
+					"editing_bgcolor" : [ 0.049247920513153, 0.058372475206852, 0.068464912474155, 1.0 ],
+					"accentcolor" : [ 0.07799056917429, 0.098447218537331, 0.10713404417038, 1.0 ],
+					"patchlinecolor" : [ 0.086274509803922, 0.266666666666667, 0.345098039215686, 1.0 ],
+					"elementcolor" : [ 0.57438737154007, 0.665937542915344, 0.915809035301208, 1.0 ],
+					"textcolor" : [ 0.6, 0.772549019607843, 1.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -523,10 +486,7 @@
 		"bgfillcolor_type" : "gradient",
 		"bgfillcolor_color1" : [ 0.07799056917429, 0.098447218537331, 0.10713404417038, 1.0 ],
 		"bgfillcolor_color2" : [ 0.07058823529, 0.1058823529, 0.1647058824, 1.0 ],
-		"bgfillcolor_color" : [ 0.2, 0.2, 0.2, 1.0 ],
-		"bgfillcolor_angle" : 270.0,
-		"bgfillcolor_proportion" : 0.5,
-		"bgfillcolor_autogradient" : 0.0
+		"bgfillcolor_color" : [ 0.2, 0.2, 0.2, 1.0 ]
 	}
 
 }

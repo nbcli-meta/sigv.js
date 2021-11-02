@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 11,
+			"minor" : 2,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -39,6 +39,18 @@
 		"subpatcher_template" : "memphis-style_template",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-3",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 80.0, 500.0, 88.0, 23.0 ],
+					"text" : "rotatexyz 0 0 0"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-4",
 					"maxclass" : "message",
@@ -96,18 +108,6 @@
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 27.600000000000023, 59.0, 60.0, 23.0 ],
 					"text" : "route grid"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-93",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 62.0, 247.0, 90.0, 23.0 ],
-					"text" : "scale 1. 1. 1."
 				}
 
 			}
@@ -322,6 +322,14 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-58", 0 ],
+					"midpoints" : [ 89.5, 553.5, 37.100000000000023, 553.5 ],
+					"source" : [ "obj-3", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-58", 0 ],
 					"midpoints" : [ 64.100000000000023, 553.0, 37.100000000000023, 553.0 ],
 					"source" : [ "obj-34", 0 ]
 				}
@@ -405,17 +413,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-58", 0 ],
-					"midpoints" : [ 71.5, 351.5, 37.100000000000023, 351.5 ],
-					"order" : 1,
-					"source" : [ "obj-73", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-93", 1 ],
-					"midpoints" : [ 71.5, 238.5, 142.5, 238.5 ],
-					"order" : 0,
+					"midpoints" : [ 71.5, 347.5, 37.100000000000023, 347.5 ],
 					"source" : [ "obj-73", 0 ]
 				}
 
@@ -476,17 +474,17 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-34", 0 ],
-					"midpoints" : [ 120.350000000000023, 314.5, 64.100000000000023, 314.5 ],
-					"source" : [ "obj-9", 3 ]
+					"destination" : [ "obj-3", 0 ],
+					"midpoints" : [ 92.600000000000023, 306.0, 89.5, 306.0 ],
+					"source" : [ "obj-9", 2 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-52", 0 ],
-					"midpoints" : [ 92.600000000000023, 194.5, 138.5, 194.5 ],
-					"source" : [ "obj-9", 2 ]
+					"destination" : [ "obj-34", 0 ],
+					"midpoints" : [ 120.350000000000023, 314.5, 64.100000000000023, 314.5 ],
+					"source" : [ "obj-9", 3 ]
 				}
 
 			}
@@ -562,10 +560,10 @@
 , 			{
 				"name" : "dvnt2",
 				"default" : 				{
-					"elementcolor" : [ 0.681193, 0.750541, 0.758255, 1.0 ],
-					"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"color" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"color" : [ 0.0, 0.0, 0.0, 1.0 ]
+					"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"elementcolor" : [ 0.681193, 0.750541, 0.758255, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -611,10 +609,10 @@
 , 			{
 				"name" : "myrPattr",
 				"default" : 				{
-					"fontname" : [ "Arial" ],
 					"fontface" : [ 0 ],
 					"fontsize" : [ 12.0 ],
-					"accentcolor" : [ 0.945098, 0.913725, 0.407843, 1.0 ]
+					"accentcolor" : [ 0.945098, 0.913725, 0.407843, 1.0 ],
+					"fontname" : [ "Arial" ]
 				}
 ,
 				"parentstyle" : "",
@@ -641,9 +639,9 @@
 , 			{
 				"name" : "myrSubpatch",
 				"default" : 				{
-					"fontname" : [ "Arial" ],
 					"fontsize" : [ 12.0 ],
-					"accentcolor" : [ 0.082353, 0.431373, 0.411765, 1.0 ]
+					"accentcolor" : [ 0.082353, 0.431373, 0.411765, 1.0 ],
+					"fontname" : [ "Arial" ]
 				}
 ,
 				"parentstyle" : "",

@@ -1,4 +1,31 @@
 
+// Generate Patch
+var rcoda = this.patcher.newdefault(99,165.5,'r','coda');
+var jsrt = this.patcher.newdefault(99,194.5,'route','js');
+this.patcher.connect(rcoda,0,jsrt,0);
+this.patcher.connect(jsrt,0,this.box,0)
+var jstrig = this.patcher.newdefault(99,257.5,'t','l');
+var scoda = this.patcher.newdefault(99,304.5,'s','coda');
+this.patcher.connect(this.box,0,jstrig,0);
+this.patcher.connect(jstrig,0,scoda,0);
+
+var cmd = this.patcher.newdefault(27.5,83,'textedit','@presentation',1,'@lines',1,'@keymode',1,'@tabmode',0,'@wordwrap',0,'@patching_rect',27.5,83.,248.,24.,'@presentation_rect',6.,8.,248.,24.,'@bordercolor',0,0,0,0);
+var trig = this.patcher.newdefault(160.5,27,'trigger','select','clear');
+this.patcher.connect(cmd,0,trig,0);
+
+var txtrt = this.patcher.newdefault(208,164.,'route','text');
+var bangrt = this.patcher.newdefault(208,194.5,'route','bang');
+this.patcher.connect(bangrt,0,cmd,0);
+this.patcher.connect(cmd,0,txtrt,0);
+this.patcher.connect(txtrt,0,bangrt,0);
+this.patcher.connect(bangrt,1,trig,0);
+this.patcher.connect(bangrt,1,scoda,0);
+
+var saudio = this.patcher.newdefault(208,116,'receive~','audio','@patching_rect',208.,116.,100.,23.);
+var meter = this.patcher.newdefault(185.5,113.,'live.meter~','@presentation',1,'@orientation',1,'@presentation_rect',150.,37.,100.,5.,'@patching_rect',185.5,113.,90.,5.);
+
+this.patcher.connect(saudio,0,meter,0);
+
 // sigv composition modes
 function auto() {
   wrld(2);
@@ -23,6 +50,7 @@ function spinny() {
   outlet(0,'grid','gs2','shape','sphere');
   outlet(0,'grid','anim','turn',0,1,0);
   outlet(0,'grid','^',1,10000);
+  outlet(0,'js','light');
 }
 
 function krypton() {
@@ -84,11 +112,11 @@ function del(o) {
 function wrld(param) {
 
   if (param == 2) {
-    var monde = this.patcher.newdefault(0,0,'jit.world','monde','@visible',1,'@enable',1,'@size',1024,550,'@dim',1920,1080,'@erase_color',0,0,0,1,'@fsaa',1);
+    var monde = this.patcher.newdefault(0,0,'jit.world','monde','@visible',1,'@enable',1,'@size',1024,575,'@dim',1920,1080,'@erase_color',0,0,0,1,'@fsaa',1);
     var metro = this.patcher.newdefault(0,0,'send','metro');
     this.patcher.connect(monde,1,metro,0);
     var camera = this.patcher.newdefault(0,0,'jit.gl.camera','@position',0,0,4);
-    var movie = this.patcher.newdefault(0,0,'jit.movie','@output_texture',1);
+    var movie = this.patcher.newdefault(0,0,'jit.movie','@output_texture',0);
     this.patcher.connect(movie,0,monde,0);
     var movie_route = this.patcher.newdefault(0,0,'route','movie');
     this.patcher.connect(movie_route,0,movie,0);
@@ -106,19 +134,61 @@ function wrld(param) {
   }
 
   if (param == 1) {
-    var monde = this.patcher.newdefault(0,0,'jit.world','monde','@visible',1,'@enable',1,'@size',1024,550,'@dim',1920,1080,'@erase_color',0,0,0,1,'@fsaa',1);
+    var monde = this.patcher.newdefault(0,0,'jit.world','monde','@visible',1,'@enable',1,'@size',1024,575,'@dim',1920,1080,'@erase_color',0,0,0,1,'@fsaa',1);
     var metro = this.patcher.newdefault(0,0,'send','metro');
     this.patcher.connect(monde,1,metro,0);
     var camera = this.patcher.newdefault(0,0,'jit.gl.camera','@position',0,0,4);
     var bg = this.patcher.newdefault(0,0,'bg');
+    // var rcoda = this.patcher.newdefault(0,0,'r','coda');
+    // this.patcher.connect()
   }
 
   if (param == 0) {
-    var monde = this.patcher.newdefault(0,0,'jit.world','monde','@visible',0,'@enable',1,'@size',1024,550,'@dim',1920,1080,'@erase_color',0,0,0,1,'@fsaa',1);
+    var monde = this.patcher.newdefault(0,0,'jit.world','monde','@visible',0,'@enable',1,'@size',1024,575,'@dim',1920,1080,'@erase_color',0,0,0,1,'@fsaa',1);
     var metro = this.patcher.newdefault(0,0,'send','metro');
     this.patcher.connect(monde,1,metro,0);
     var camera = this.patcher.newdefault(0,0,'jit.gl.camera','@position',0,0,4);
   }
+
+  if (param == 3) {
+    var monde = this.patcher.newdefault(0,0,'jit.world','monde','@visible',1,'@enable',1,'@size',1024,575,'@dim',1920,1080,'@erase_color',0,0,0,1,'@fsaa',1);
+    var metro = this.patcher.newdefault(0,0,'send','metro');
+    this.patcher.connect(monde,1,metro,0);
+    var camera = this.patcher.newdefault(0,0,'jit.gl.camera','@position',0,0,4);
+    var movie = this.patcher.newdefault(0,0,'jit.movie','@output_texture',0);
+    this.patcher.connect(movie,0,monde,0);
+    var movie_route = this.patcher.newdefault(0,0,'route','movie');
+    this.patcher.connect(movie_route,0,movie,0);
+    var rcoda = this.patcher.newdefault(0,0,'r','coda');
+    this.patcher.connect(rcoda,0,movie_route,0);
+    var grid = this.patcher.newdefault(0,0,'grid');
+    var bg = this.patcher.newdefault(0,0,'bg');
+    var wave = this.patcher.newdefault(0,0,'wave');
+    var model = this.patcher.newdefault(0,0,'model');
+    var proc = this.patcher.newdefault(0,0,'proc');
+    var light = this.patcher.newdefault(0,0,'light');
+    var tilde = this.patcher.newdefault(0,0,'tilde');
+    var bfg = this.patcher.newdefault(0,0,'bfg');
+    var terminal = this.patcher.newdefault(0,0,'terminal');
+
+    var gw = this.patcher.newdefault(0,0,'gibberwocky','@signals',1);
+    var gwrt = this.patcher.newdefault(0,0,'route','gibwo');
+    var scoda = this.patcher.newdefault(0,0,'s','coda');
+    this.patcher.connect(rcoda,0,gwrt,0);
+    this.patcher.connect(gwrt,0,gw,1);
+    this.patcher.connect(gw,0,scoda,0);
+    outlet(0,'gibwo',1);
+  }
+}
+
+function gibwo() {
+  var gw = this.patcher.newdefault(0,0,'gibberwocky','@signals',1);
+  var gwrt = this.patcher.newdefault(0,0,'route','gibwo');
+  var scoda = this.patcher.newdefault(0,0,'s','coda');
+  this.patcher.connect(rcoda,0,gwrt,0);
+  this.patcher.connect(gwrt,0,gw,1);
+  this.patcher.connect(gw,0,scoda,0);
+  outlet(0,'gibwo',1);
 }
 
 // init primitives
