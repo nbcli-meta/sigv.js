@@ -40,8 +40,8 @@ function tvstart() {
   bgObject();
   outlet(0,'bg','fpic','read','colorbars.png');
   outlet(0,'bg','fpic','bang');
-  outlet(0,'bg','material','emission_texture','pic');
-  outlet(0,'bg','material','diffuse_texture','pic');
+  outlet(0,'bg','material','emission_texture','bg');
+  outlet(0,'bg','material','diffuse_texture','bg');
 }
 
 function spinny() {
@@ -61,15 +61,37 @@ function krypton() {
   outlet(0,'grid','gs1','shape','opencube');
   outlet(0,'grid','^',1,3000);
   outlet(0,'grid','gs1','shape','cone');
-  bfgObject();
-  materialObject();
-  outlet(0,'bfg','basis','noise.voronoi');
+  outlet(0,'grid','material','diffuse_texture','bfg');
+  outlet(0,'bfg','basis','noise.simplex');
   outlet(0,'bfg','origin',4.,2.,0.);
   outlet(0,'bfg','offset',0.1,0.1,0.1);
   outlet(0,'bfg','scale',100.);
   outlet(0,'bfg','weight',0.12);
   outlet(0,'grid','anim','turn',0,1,0);
   outlet(0,'grid','^',1,10000);
+}
+
+function lorenz1() {
+  var lorenz = this.patcher.newdefault(0,0,'lorenz-system');
+  wrld(2);
+  lorenzObject();
+}
+
+function osci() {
+  wrld(2);
+  outlet(0,'light','enable',0);
+  outlet(0,'grid','material','mat_emission',.02,.02,.02);
+  outlet(0,'grid','material','mat_diffuse',.02,.02,.02);
+  outlet(0,'grid','enable',1);
+  outlet(0,'grid','draw_mode','quad_grid');
+  outlet(0,'grid','poly_mode',1,1);
+  outlet(0,'aio','activate',0);
+  outlet(0,'aio','sigx',0.5);
+  outlet(0,'aio','sigy',0.25);
+  outlet(0,'wave','para','sphere');
+  outlet(0,'wave','para','^',.95,2000);
+  outlet(0,'wave','aio','^',1);
+  outlet(0,'wave','material','mat_emission',.1,.1,.1);
 }
 
 // sigv objects
@@ -88,18 +110,18 @@ function bfgObject() {
   outlet(0,'bfg','weight',0.32);
 }
 
-function materialObject() {
-  outlet(0,'grid','material','heightmap_texture','tex0');
-  outlet(0,'grid','material','emission_texture','tex0');
-  outlet(0,'grid','material','diffuse_texture','tex0');
-  outlet(0,'grid','material','normals_texture','tex0');
-}
-
 function bgObject() {
   outlet(0,'bg','enable',1);
   outlet(0,'bg','scale',3.25,2.25,1,'position',0,0,0);
   outlet(0,'bg','material','mat_diffuse',.5,.5,.5,1.);
   outlet(0,'bg','material','mat_emission',.1,.1,.1);
+}
+
+function lorenzObject() {
+  outlet(0,'lorenz','sample',1);
+  outlet(0,'lorenz','mesh','scale',0.5);
+  outlet(0,'lorenz','mesh','rotatexyz',0,0,-57);
+  outlet(0,'lorenz','^',10.,28.,2.667,0.007);
 }
 
 // sigv utils
@@ -124,6 +146,7 @@ function wrld(param) {
     this.patcher.connect(rcoda,0,movie_route,0);
     var grid = this.patcher.newdefault(0,0,'grid');
     var bg = this.patcher.newdefault(0,0,'bg');
+    var aio = this.patcher.newdefault(0,0,'aio');
     var wave = this.patcher.newdefault(0,0,'wave');
     var model = this.patcher.newdefault(0,0,'model');
     var proc = this.patcher.newdefault(0,0,'proc');
@@ -163,6 +186,7 @@ function wrld(param) {
     this.patcher.connect(rcoda,0,movie_route,0);
     var grid = this.patcher.newdefault(0,0,'grid');
     var bg = this.patcher.newdefault(0,0,'bg');
+    var aio = this.patcher.newdefault(0,0,'aio');
     var wave = this.patcher.newdefault(0,0,'wave');
     var model = this.patcher.newdefault(0,0,'model');
     var proc = this.patcher.newdefault(0,0,'proc');
@@ -192,6 +216,10 @@ function gibwo() {
 }
 
 // init primitives
+function aio() {
+  var aio = this.patcher.newdefault(0,0,'aio');
+}
+
 function wave() {
   var wave = this.patcher.newdefault(0,0,'wave');
 }
@@ -244,6 +272,10 @@ function bfg() {
 
 function grain() {
   var grain = this.patcher.newdefault(0,0,'grain');
+}
+
+function lttp() {
+  var lttp = this.patcher.newdefault(0,0,'lttp');
 }
 
 function osc() {

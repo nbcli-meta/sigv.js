@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 11,
+			"minor" : 2,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -314,8 +314,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 11,
+							"minor" : 2,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -616,9 +616,9 @@
 								"name" : "dvnt2",
 								"default" : 								{
 									"color" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"elementcolor" : [ 0.681193, 0.750541, 0.758255, 1.0 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"elementcolor" : [ 0.681193, 0.750541, 0.758255, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -664,10 +664,10 @@
 , 							{
 								"name" : "myrPattr",
 								"default" : 								{
-									"fontface" : [ 0 ],
 									"fontsize" : [ 12.0 ],
+									"fontname" : [ "Arial" ],
 									"accentcolor" : [ 0.945098, 0.913725, 0.407843, 1.0 ],
-									"fontname" : [ "Arial" ]
+									"fontface" : [ 0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -695,8 +695,8 @@
 								"name" : "myrSubpatch",
 								"default" : 								{
 									"fontsize" : [ 12.0 ],
-									"accentcolor" : [ 0.082353, 0.431373, 0.411765, 1.0 ],
-									"fontname" : [ "Arial" ]
+									"fontname" : [ "Arial" ],
+									"accentcolor" : [ 0.082353, 0.431373, 0.411765, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -763,8 +763,8 @@
 					"numinlets" : 9,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_matrix", "" ],
-					"patching_rect" : [ 23.5, 454.0, 379.5, 37.0 ],
-					"text" : "jit.gl.mesh monde @color 1 1 1 1 @lighting_enable 1 @smooth_shading 1 @auto_normals 1"
+					"patching_rect" : [ 23.5, 454.0, 315.0, 37.0 ],
+					"text" : "jit.gl.mesh monde @lighting_enable 1 @smooth_shading 1 @auto_normals 1"
 				}
 
 			}
@@ -791,8 +791,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 11,
+							"minor" : 2,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -906,7 +906,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 252.5, 206.0, 86.0, 23.0 ],
-									"text" : "vec 0.1 0.2 0.7"
+									"text" : "vec 0.3 0.3 0.3"
 								}
 
 							}
@@ -918,7 +918,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 187.0, 206.0, 57.0, 23.0 ],
-									"text" : "vec 1 1 0"
+									"text" : "vec 1 1 1"
 								}
 
 							}
@@ -1216,9 +1216,9 @@
 								"name" : "dvnt2",
 								"default" : 								{
 									"color" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"elementcolor" : [ 0.681193, 0.750541, 0.758255, 1.0 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"elementcolor" : [ 0.681193, 0.750541, 0.758255, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1264,10 +1264,10 @@
 , 							{
 								"name" : "myrPattr",
 								"default" : 								{
-									"fontface" : [ 0 ],
 									"fontsize" : [ 12.0 ],
+									"fontname" : [ "Arial" ],
 									"accentcolor" : [ 0.945098, 0.913725, 0.407843, 1.0 ],
-									"fontname" : [ "Arial" ]
+									"fontface" : [ 0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1295,8 +1295,8 @@
 								"name" : "myrSubpatch",
 								"default" : 								{
 									"fontsize" : [ 12.0 ],
-									"accentcolor" : [ 0.082353, 0.431373, 0.411765, 1.0 ],
-									"fontname" : [ "Arial" ]
+									"fontname" : [ "Arial" ],
+									"accentcolor" : [ 0.082353, 0.431373, 0.411765, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1416,6 +1416,18 @@
 				}
 
 			}
+, 			{
+				"box" : 				{
+					"attr" : "auto_material",
+					"id" : "obj-22",
+					"maxclass" : "attrui",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 253.0, 368.0, 150.0, 23.0 ]
+				}
+
+			}
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
@@ -1528,6 +1540,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-27", 0 ],
+					"source" : [ "obj-22", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-3", 0 ],
 					"source" : [ "obj-27", 0 ]
 				}
@@ -1616,7 +1635,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-27", 0 ],
+					"destination" : [ "obj-27", 2 ],
 					"source" : [ "obj-6", 2 ]
 				}
 
@@ -1624,7 +1643,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-3", 1 ],
-					"midpoints" : [ 46.333333333333336, 411.0, 78.0625, 411.0 ],
+					"midpoints" : [ 46.333333333333336, 411.0, 70.0, 411.0 ],
 					"source" : [ "obj-6", 1 ]
 				}
 
@@ -1692,9 +1711,9 @@
 				"name" : "dvnt2",
 				"default" : 				{
 					"color" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"elementcolor" : [ 0.681193, 0.750541, 0.758255, 1.0 ],
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+					"elementcolor" : [ 0.681193, 0.750541, 0.758255, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -1740,10 +1759,10 @@
 , 			{
 				"name" : "myrPattr",
 				"default" : 				{
-					"fontface" : [ 0 ],
 					"fontsize" : [ 12.0 ],
+					"fontname" : [ "Arial" ],
 					"accentcolor" : [ 0.945098, 0.913725, 0.407843, 1.0 ],
-					"fontname" : [ "Arial" ]
+					"fontface" : [ 0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -1771,8 +1790,8 @@
 				"name" : "myrSubpatch",
 				"default" : 				{
 					"fontsize" : [ 12.0 ],
-					"accentcolor" : [ 0.082353, 0.431373, 0.411765, 1.0 ],
-					"fontname" : [ "Arial" ]
+					"fontname" : [ "Arial" ],
+					"accentcolor" : [ 0.082353, 0.431373, 0.411765, 1.0 ]
 				}
 ,
 				"parentstyle" : "",

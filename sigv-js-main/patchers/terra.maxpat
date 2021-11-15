@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 11,
+			"minor" : 2,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 519.0, 187.0, 355.0, 512.0 ],
+		"rect" : [ 549.0, 697.0, 355.0, 239.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -41,7 +41,6 @@
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-16",
-					"int" : 1,
 					"maxclass" : "gswitch",
 					"numinlets" : 3,
 					"numoutlets" : 1,
@@ -174,6 +173,7 @@
 		"lines" : [ 			{
 				"patchline" : 				{
 					"destination" : [ "obj-2", 4 ],
+					"midpoints" : [ 173.981480121612549, 133.685185849666595, 232.524690945943206, 133.685185849666595 ],
 					"source" : [ "obj-10", 0 ]
 				}
 
@@ -195,6 +195,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-16", 0 ],
+					"midpoints" : [ 205.523147761821747, 119.907407283782959, 82.5, 119.907407283782959 ],
 					"source" : [ "obj-15", 5 ]
 				}
 
@@ -202,6 +203,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-2", 6 ],
+					"midpoints" : [ 273.532406866550446, 147.907407283782959, 307.537036418914795, 147.907407283782959 ],
 					"source" : [ "obj-15", 7 ]
 				}
 
@@ -209,6 +211,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
+					"midpoints" : [ 239.527777314186096, 147.907407283782959, 82.5, 147.907407283782959 ],
 					"source" : [ "obj-15", 6 ]
 				}
 
@@ -216,6 +219,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-2", 5 ],
+					"midpoints" : [ 171.518518209457397, 147.907407283782959, 270.030863682428958, 147.907407283782959 ],
 					"source" : [ "obj-15", 4 ]
 				}
 
@@ -223,6 +227,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-2", 3 ],
+					"midpoints" : [ 137.513888657093048, 147.907407283782959, 195.018518209457397, 147.907407283782959 ],
 					"source" : [ "obj-15", 3 ]
 				}
 
@@ -230,6 +235,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-2", 2 ],
+					"midpoints" : [ 103.509259104728699, 147.907407283782959, 157.512345472971617, 147.907407283782959 ],
 					"source" : [ "obj-15", 2 ]
 				}
 
@@ -237,6 +243,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-2", 1 ],
+					"midpoints" : [ 69.504629552364349, 147.907407283782959, 120.006172736485809, 147.907407283782959 ],
 					"source" : [ "obj-15", 1 ]
 				}
 
@@ -244,6 +251,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-2", 4 ],
+					"midpoints" : [ 35.5, 147.907407283782959, 232.524690945943206, 147.907407283782959 ],
 					"source" : [ "obj-15", 0 ]
 				}
 
@@ -258,6 +266,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-16", 2 ],
+					"midpoints" : [ 163.981480121612549, 91.240741521120071, 104.5, 91.240741521120071 ],
 					"source" : [ "obj-3", 0 ]
 				}
 
@@ -265,6 +274,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-2", 1 ],
+					"midpoints" : [ 105.981480121612549, 119.240741521120071, 120.006172736485809, 119.240741521120071 ],
 					"source" : [ "obj-4", 0 ]
 				}
 
@@ -272,6 +282,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-2", 2 ],
+					"midpoints" : [ 217.42592591047287, 119.240741521120071, 157.512345472971617, 119.240741521120071 ],
 					"source" : [ "obj-6", 0 ]
 				}
 
@@ -286,8 +297,8 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "terrain.maxpat",
-				"bootpath" : "~/Desktop/systems/sigv/mesh",
-				"patcherrelativepath" : "../../sigv/mesh",
+				"bootpath" : "~/sigv.js/sigv-js-main/patchers",
+				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -323,10 +334,10 @@
 , 			{
 				"name" : "dvnt2",
 				"default" : 				{
-					"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"color" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"elementcolor" : [ 0.681193, 0.750541, 0.758255, 1.0 ],
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"color" : [ 0.0, 0.0, 0.0, 1.0 ]
+					"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -372,10 +383,10 @@
 , 			{
 				"name" : "myrPattr",
 				"default" : 				{
-					"fontsize" : [ 12.0 ],
-					"accentcolor" : [ 0.945098, 0.913725, 0.407843, 1.0 ],
 					"fontname" : [ "Arial" ],
-					"fontface" : [ 0 ]
+					"accentcolor" : [ 0.945098, 0.913725, 0.407843, 1.0 ],
+					"fontface" : [ 0 ],
+					"fontsize" : [ 12.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -402,9 +413,9 @@
 , 			{
 				"name" : "myrSubpatch",
 				"default" : 				{
-					"fontsize" : [ 12.0 ],
+					"fontname" : [ "Arial" ],
 					"accentcolor" : [ 0.082353, 0.431373, 0.411765, 1.0 ],
-					"fontname" : [ "Arial" ]
+					"fontsize" : [ 12.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -440,8 +451,8 @@
 , 			{
 				"name" : "newobjYellow-1",
 				"default" : 				{
-					"fontsize" : [ 12.059008 ],
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+					"fontsize" : [ 12.059008 ]
 				}
 ,
 				"parentstyle" : "",
@@ -462,10 +473,7 @@
 		"bgfillcolor_type" : "gradient",
 		"bgfillcolor_color1" : [ 0.07799056917429, 0.098447218537331, 0.10713404417038, 1.0 ],
 		"bgfillcolor_color2" : [ 0.07058823529, 0.1058823529, 0.1647058824, 1.0 ],
-		"bgfillcolor_color" : [ 0.2, 0.2, 0.2, 1.0 ],
-		"bgfillcolor_angle" : 270.0,
-		"bgfillcolor_proportion" : 0.5,
-		"bgfillcolor_autogradient" : 0.0
+		"bgfillcolor_color" : [ 0.2, 0.2, 0.2, 1.0 ]
 	}
 
 }
