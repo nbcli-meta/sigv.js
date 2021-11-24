@@ -2,7 +2,7 @@
 	"name" : "sigv-js-main",
 	"version" : 1,
 	"creationdate" : 3707632909,
-	"modificationdate" : 3707935751,
+	"modificationdate" : 3720038297,
 	"viewrect" : [ 25.0, 81.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
@@ -12,7 +12,6 @@
 		"patchers" : 		{
 			"sigv-js-main.maxpat" : 			{
 				"kind" : "patcher",
-				"local" : 1,
 				"toplevel" : 1
 			}
 

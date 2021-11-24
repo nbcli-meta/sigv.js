@@ -26,110 +26,6 @@ var meter = this.patcher.newdefault(185.5,113.,'live.meter~','@presentation',1,'
 
 this.patcher.connect(saudio,0,meter,0);
 
-// sigv composition modes
-function auto() {
-  wrld(2);
-  gridObject();
-  outlet(0,'light','gs','enable',1);
-  outlet(0,'light','gs','enable',1);
-  outlet(0,'light','gs','enable',1);
-}
-
-function tvstart() {
-  wrld(2);
-  bgObject();
-  outlet(0,'bg','fpic','read','colorbars.png');
-  outlet(0,'bg','fpic','bang');
-  outlet(0,'bg','material','emission_texture','bg');
-  outlet(0,'bg','material','diffuse_texture','bg');
-}
-
-function spinny() {
-  wrld(2);
-  outlet(0,'grid','enable',1);
-  outlet(0,'grid','gs2','shape','sphere');
-  outlet(0,'grid','anim','turn',0,1,0);
-  outlet(0,'grid','^',1,10000);
-  outlet(0,'js','light');
-}
-
-function krypton() {
-  wrld(2);
-  gridObject();
-  outlet(0,'grid','draw_mode','polygon');
-  outlet(0,'grid','gs2','shape','opencylinder');
-  outlet(0,'grid','gs1','shape','opencube');
-  outlet(0,'grid','^',1,3000);
-  outlet(0,'grid','gs1','shape','cone');
-  outlet(0,'grid','material','diffuse_texture','bfg');
-  outlet(0,'bfg','basis','noise.simplex');
-  outlet(0,'bfg','origin',4.,2.,0.);
-  outlet(0,'bfg','offset',0.1,0.1,0.1);
-  outlet(0,'bfg','scale',100.);
-  outlet(0,'bfg','weight',0.12);
-  outlet(0,'grid','anim','turn',0,1,0);
-  outlet(0,'grid','^',1,10000);
-}
-
-function lorenz1() {
-  var lorenz = this.patcher.newdefault(0,0,'lorenz-system');
-  wrld(2);
-  lorenzObject();
-}
-
-function osci() {
-  wrld(2);
-  outlet(0,'light','enable',0);
-  outlet(0,'grid','material','mat_emission',.02,.02,.02);
-  outlet(0,'grid','material','mat_diffuse',.02,.02,.02);
-  outlet(0,'grid','enable',1);
-  outlet(0,'grid','draw_mode','quad_grid');
-  outlet(0,'grid','poly_mode',1,1);
-  outlet(0,'aio','activate',0);
-  outlet(0,'aio','sigx',0.5);
-  outlet(0,'aio','sigy',0.25);
-  outlet(0,'wave','para','sphere');
-  outlet(0,'wave','para','^',.95,2000);
-  outlet(0,'wave','aio','^',1);
-  outlet(0,'wave','material','mat_emission',.1,.1,.1);
-}
-
-// sigv objects
-
-function gridObject() {
-  outlet(0,'grid','enable',1);
-  outlet(0,'grid','anim','turn',0,-1,0);
-  outlet(0,'grid','material','mat_emission',.1,.1,.1);
-}
-
-function bfgObject() {
-  outlet(0,'bfg','basis','noise.simplex');
-  outlet(0,'bfg','origin',0.,0.,0.);
-  outlet(0,'bfg','offset',0.1,0.1,0.1);
-  outlet(0,'bfg','scale',0.75);
-  outlet(0,'bfg','weight',0.32);
-}
-
-function bgObject() {
-  outlet(0,'bg','enable',1);
-  outlet(0,'bg','scale',3.25,2.25,1,'position',0,0,0);
-  outlet(0,'bg','material','mat_diffuse',.5,.5,.5,1.);
-  outlet(0,'bg','material','mat_emission',.1,.1,.1);
-}
-
-function lorenzObject() {
-  outlet(0,'lorenz','sample',1);
-  outlet(0,'lorenz','mesh','scale',0.5);
-  outlet(0,'lorenz','mesh','rotatexyz',0,0,-57);
-  outlet(0,'lorenz','^',10.,28.,2.667,0.007);
-}
-
-// sigv utils
-function del(o) {
-  var del = this.patcher.remove(o);
-}
-
-
 // init monde
 function wrld(param) {
 
@@ -161,9 +57,8 @@ function wrld(param) {
     var metro = this.patcher.newdefault(0,0,'send','metro');
     this.patcher.connect(monde,1,metro,0);
     var camera = this.patcher.newdefault(0,0,'jit.gl.camera','@position',0,0,4);
-    var bg = this.patcher.newdefault(0,0,'bg');
-    // var rcoda = this.patcher.newdefault(0,0,'r','coda');
-    // this.patcher.connect()
+    var rcoda = this.patcher.newdefault(0,0,'r','coda');
+    this.patcher.connect()
   }
 
   if (param == 0) {
@@ -257,6 +152,10 @@ function lorenz() {
   var lorenz = this.patcher.newdefault(0,0,'lorenz-system');
 }
 
+function burkeshaw() {
+  var burkeshaw = this.patcher.newdefault(0,0,'burke-shaw-system');
+}
+
 // init systems environment
 function light() {
   var light = this.patcher.newdefault(0,0,'light');
@@ -296,4 +195,137 @@ function som() {
 
 function terminal() {
   var terminal = this.patcher.newdefault(0,0,'terminal');
+}
+
+function orca() {
+  var orca = this.patcher.newdefault(0,0,'orca');
+}
+
+// sigv composition modes
+function auto() {
+  wrld(2);
+  gridObject();
+  outlet(0,'light','gs','enable',1);
+  outlet(0,'light','gs','enable',1);
+  outlet(0,'light','gs','enable',1);
+}
+
+function third() {
+  wrld(2);
+  outlet(0,'model','enable',0);
+  outlet(0,'model','^','enable',1);
+  outlet(0,'model','^','draw_mode','tri_strip');
+  outlet(0,'model','^','material','emission_texture','mtex');
+  outlet(0,'model','^','read');
+}
+
+function tvstart() {
+  wrld(2);
+  bgObject();
+  outlet(0,'bg','fpic','read','colorbars.png');
+  outlet(0,'bg','fpic','bang');
+  outlet(0,'bg','material','emission_texture','bg');
+  outlet(0,'bg','material','diffuse_texture','bg');
+}
+
+function spinny() {
+  wrld(2);
+  outlet(0,'grid','enable',1);
+  outlet(0,'grid','gs2','shape','sphere');
+  outlet(0,'grid','anim','turn',0,1,0);
+  outlet(0,'grid','^',1,10000);
+  outlet(0,'js','light');
+}
+
+function krypton() {
+  // wrld(2);
+  gridObject();
+  outlet(0,'grid','draw_mode','polygon');
+  outlet(0,'grid','gs2','shape','opencylinder');
+  outlet(0,'grid','gs1','shape','opencube');
+  outlet(0,'grid','^',1,3000);
+  outlet(0,'grid','gs1','shape','cone');
+  outlet(0,'grid','material','diffuse_texture','bfg');
+  outlet(0,'bfg','basis','noise.simplex');
+  outlet(0,'bfg','origin',4.,2.,0.);
+  outlet(0,'bfg','offset',0.1,0.1,0.1);
+  outlet(0,'bfg','scale',100.);
+  outlet(0,'bfg','weight',0.12);
+  outlet(0,'grid','anim','turn',0,1,0);
+  outlet(0,'grid','^',1,10000);
+}
+
+function lorenz1() {
+  var lorenz = this.patcher.newdefault(0,0,'lorenz-system');
+  wrld(2);
+  lorenzObject();
+}
+
+function burke1() {
+  var burkeshaw = this.patcher.newdefault(0,0,'burke-shaw-system');
+  wrld(2);
+  burkeObject();
+}
+
+function osci() {
+  wrld(2);
+  outlet(0,'light','enable',0);
+  quadrant();
+}
+
+function quadrant() {
+  outlet(0,'grid','material','mat_emission',.02,.02,.02);
+  outlet(0,'grid','material','mat_diffuse',.02,.02,.02);
+  outlet(0,'grid','enable',1);
+  outlet(0,'grid','draw_mode','quad_grid');
+  outlet(0,'grid','poly_mode',1,1);
+  outlet(0,'aio','activate',0);
+  outlet(0,'aio','sigx',0.5);
+  outlet(0,'aio','sigy',0.25);
+  outlet(0,'wave','para','sphere');
+  outlet(0,'wave','para','^',.95,2000);
+  outlet(0,'wave','aio','^',1);
+  outlet(0,'wave','material','mat_emission',.1,.1,.1);
+}
+
+// sigv objects
+
+function gridObject() {
+  outlet(0,'grid','enable',1);
+  outlet(0,'grid','anim','turn',0,-1,0);
+  outlet(0,'grid','material','mat_emission',.1,.1,.1);
+}
+
+function bfgObject() {
+  outlet(0,'bfg','basis','noise.simplex');
+  outlet(0,'bfg','origin',0.,0.,0.);
+  outlet(0,'bfg','offset',0.1,0.1,0.1);
+  outlet(0,'bfg','scale',0.75);
+  outlet(0,'bfg','weight',0.32);
+}
+
+function bgObject() {
+  outlet(0,'bg','enable',1);
+  outlet(0,'bg','scale',3.25,2.25,1,'position',0,0,0);
+  outlet(0,'bg','material','mat_diffuse',.5,.5,.5,1.);
+  outlet(0,'bg','material','mat_emission',.1,.1,.1);
+}
+
+function lorenzObject() {
+  outlet(0,'lorenz','sample',1);
+  outlet(0,'lorenz','mesh','scale',0.5);
+  outlet(0,'lorenz','mesh','rotatexyz',0,0,-57);
+  outlet(0,'lorenz','^',10.,28.,2.667,0.007);
+}
+
+function burkeObject() {
+  outlet(0,'burkeshaw','sample',1);
+  outlet(0,'burkeshaw','mesh','scale',0.5);
+  outlet(0,'burkeshaw','mesh','rotatexyz',0,0,-57);
+  outlet(0,'burkeshaw','^',10.,4.272,0.01);
+}
+
+// sigv utils
+function del(o) {
+  this.patcher.remove(o);
 }
