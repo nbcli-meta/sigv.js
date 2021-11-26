@@ -73,11 +73,14 @@ function wrld(param) {
     var metro = this.patcher.newdefault(0,0,'send','metro');
     this.patcher.connect(monde,1,metro,0);
     var camera = this.patcher.newdefault(0,0,'jit.gl.camera','@position',0,0,4);
+    var camera_route = this.patcher.newdefault(0,0,'route','camera');
+    this.patcher.connect(camera_route,0,camera,0);
+    var rcoda = this.patcher.newdefault(0,0,'r','coda');
+    this.patcher.connect(rcoda,0,camera_route,0);
     var movie = this.patcher.newdefault(0,0,'jit.movie','@output_texture',0);
     this.patcher.connect(movie,0,monde,0);
     var movie_route = this.patcher.newdefault(0,0,'route','movie');
     this.patcher.connect(movie_route,0,movie,0);
-    var rcoda = this.patcher.newdefault(0,0,'r','coda');
     this.patcher.connect(rcoda,0,movie_route,0);
     var grid = this.patcher.newdefault(0,0,'grid');
     var bg = this.patcher.newdefault(0,0,'bg');
@@ -137,6 +140,10 @@ function proc() {
 
 function terra() {
   var terra = this.patcher.newdefault(0,0,'terra');
+}
+
+function nurbs() {
+  var nurbs = this.patcher.newdefault(0,0,'nurbs');
 }
 
 function graph() {
@@ -201,13 +208,44 @@ function orca() {
   var orca = this.patcher.newdefault(0,0,'orca');
 }
 
+function markov() {
+  var markov = this.patcher.newdefault(0,0,'markov');
+}
+
 // sigv composition modes
 function auto() {
   wrld(2);
   gridObject();
-  outlet(0,'light','gs','enable',1);
-  outlet(0,'light','gs','enable',1);
-  outlet(0,'light','gs','enable',1);
+  light();
+  light();
+}
+
+function demo() {
+  wrld(2);
+  gridObject();
+  light();
+  light();
+  // outlet(0,'light','enable',0);
+  outlet(0,'grid','gs1','shape','opencylinder');
+  outlet(0,'grid','gs2','shape','sphere');
+  outlet(0,'grid','^',.7,10000);
+  bfgObject();
+  outlet(0,'grid','material','diffuse_texture','grid');
+  outlet(0,'grid','material','normals_texture','grid');
+  outlet(0,'grid','material','emission_texture','grid');
+  outlet(0,'grid','material','heightmap_texture','bfg');
+  outlet(0,'grid','scale',0.45);
+  specs();
+  outlet(0,'aio','peak',0.32);
+  outlet(0,'aio','peak','line',2);
+  outlet(0,'grid','fpic','bang');
+  outlet(0,'grid','scale',9);
+  outlet(0,'grid','anim','turn',0,0,-.1);
+  outlet(0,'grid','rotatexyz',90,0,0);
+}
+
+function funcam() {
+
 }
 
 function third() {
