@@ -212,6 +212,14 @@ function markov() {
   var markov = this.patcher.newdefault(0,0,'markov');
 }
 
+function cv() {
+  var cv = this.patcher.newdefault(0,0,'cv');
+}
+
+function count() {
+  var count = this.patcher.newdefault(0,0,'count');
+}
+
 // sigv composition modes
 function auto() {
   wrld(2);
