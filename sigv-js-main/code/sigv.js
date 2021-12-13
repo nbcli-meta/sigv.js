@@ -214,6 +214,12 @@ function markov() {
 
 function cv() {
   var cv = this.patcher.newdefault(0,0,'cv');
+  var pco = this.patcher.newdefault(0,0,'pcontrol');
+  this.patcher.connect(pco,0,cv,0);
+  var rcoda = this.patcher.newdefault(0,0,'r','coda');
+  var ctrl1 = this.patcher.newdefault(0,0,'route','ctrl');
+  this.patcher.connect(rcoda,0,ctrl1,0);
+  this.patcher.connect(ctrl1,0,pco,0);
 }
 
 function count() {
@@ -233,27 +239,46 @@ function demo() {
   gridObject();
   light();
   light();
-  // outlet(0,'light','enable',0);
+  outlet(0,'light','enable',0);
   outlet(0,'grid','gs1','shape','opencylinder');
   outlet(0,'grid','gs2','shape','sphere');
   outlet(0,'grid','^',.7,10000);
   bfgObject();
   outlet(0,'grid','material','diffuse_texture','grid');
-  outlet(0,'grid','material','normals_texture','grid');
+  outlet(0,'grid','material','normals_texture');
   outlet(0,'grid','material','emission_texture','grid');
   outlet(0,'grid','material','heightmap_texture','bfg');
-  outlet(0,'grid','scale',0.45);
-  specs();
+  outlet(0,'grid','mesh','scale',0.45);
+  // specs();
   outlet(0,'aio','peak',0.32);
   outlet(0,'aio','peak','line',2);
   outlet(0,'grid','fpic','bang');
-  outlet(0,'grid','scale',9);
+  outlet(0,'grid','mesh','scale',9);
   outlet(0,'grid','anim','turn',0,0,-.1);
-  outlet(0,'grid','rotatexyz',90,0,0);
+  outlet(0,'grid','mesh','rotatexyz',90,0,0);
 }
 
-function funcam() {
-
+function osm() {
+  gridObject();
+  outlet(0,'light','enable',0);
+  outlet(0,'grid','gs1','shape','opencylinder');
+  outlet(0,'grid','gs2','shape','sphere');
+  outlet(0,'grid','^',.7,10000);
+  bfgObject();
+  outlet(0,'grid','mesh','poly_mode',0,0);
+  outlet(0,'grid','material','diffuse_texture','grid');
+  outlet(0,'grid','material','normals_texture');
+  outlet(0,'grid','material','emission_texture','grid');
+  outlet(0,'grid','material','heightmap_texture','bfg');
+  outlet(0,'grid','mesh','scale',0.45);
+  // specs();
+  outlet(0,'aio','peak',0.32);
+  outlet(0,'aio','peak','line',2);
+  outlet(0,'grid','fpic','read','/Users/magfoto/Desktop/[ M ] Studio/material/osmosis material/IMG_4892.JPG');
+  outlet(0,'grid','fpic','bang');
+  outlet(0,'grid','mesh','scale',9);
+  outlet(0,'grid','anim','turn',0,0,-.025);
+  outlet(0,'grid','mesh','rotatexyz',90,144.46,0);
 }
 
 function third() {
@@ -286,7 +311,7 @@ function spinny() {
 function krypton() {
   // wrld(2);
   gridObject();
-  outlet(0,'grid','draw_mode','polygon');
+  outlet(0,'grid','mesh','draw_mode','polygon');
   outlet(0,'grid','gs2','shape','opencylinder');
   outlet(0,'grid','gs1','shape','opencube');
   outlet(0,'grid','^',1,3000);
@@ -315,31 +340,36 @@ function burke1() {
 
 function osci() {
   wrld(2);
-  outlet(0,'light','enable',0);
+  light();
+  light();
+  light();
   quadrant();
 }
 
 function quadrant() {
-  outlet(0,'grid','material','mat_emission',.02,.02,.02);
-  outlet(0,'grid','material','mat_diffuse',.02,.02,.02);
-  outlet(0,'grid','enable',1);
-  outlet(0,'grid','draw_mode','quad_grid');
-  outlet(0,'grid','poly_mode',1,1);
-  outlet(0,'aio','activate',0);
-  outlet(0,'aio','sigx',0.5);
-  outlet(0,'aio','sigy',0.25);
+  outlet(0,'grid','material','mat_emission',.1,.1,.1);
+  outlet(0,'grid','material','mat_diffuse',.2,.2,.2, .5);
+  outlet(0,'grid','mesh','enable',1);
+  outlet(0,'grid','mesh','draw_mode','quad_grid');
+  outlet(0,'grid','mesh','poly_mode',1,1);
+  outlet(0,'aio','activate',2);
+  outlet(0,'aio','sig',1);
+  outlet(0,'aio','sigx',1);
+  outlet(0,'aio','sigy',1);
+  outlet(0,'wave','mesh','enable',1);
   outlet(0,'wave','para','sphere');
-  outlet(0,'wave','para','^',.95,2000);
-  outlet(0,'wave','aio','^',1);
-  outlet(0,'wave','material','mat_emission',.1,.1,.1);
+  outlet(0,'wave','para','^',.4,2000);
+  outlet(0,'wave','mesh','scale',0.1);
+  outlet(0,'wave','material','mat_emission',.35,.35,.35);
+
 }
 
 // sigv objects
 
 function gridObject() {
-  outlet(0,'grid','enable',1);
+  outlet(0,'grid','mesh','enable',1);
   outlet(0,'grid','anim','turn',0,-1,0);
-  outlet(0,'grid','material','mat_emission',.1,.1,.1);
+  outlet(0,'grid','material','mat_emission',.2,.2,.2);
 }
 
 function bfgObject() {
@@ -351,8 +381,8 @@ function bfgObject() {
 }
 
 function bgObject() {
-  outlet(0,'bg','enable',1);
-  outlet(0,'bg','scale',3.25,2.25,1,'position',0,0,0);
+  outlet(0,'bg','mesh','enable',1);
+  outlet(0,'bg','mesh','scale',3.25,2.25,1,'position',0,0,0);
   outlet(0,'bg','material','mat_diffuse',.5,.5,.5,1.);
   outlet(0,'bg','material','mat_emission',.1,.1,.1);
 }
