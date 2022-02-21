@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 11,
+			"minor" : 2,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 1512.0, 512.0, 299.0, 482.0 ],
+		"rect" : [ 1654.0, 651.0, 299.0, 482.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -42,7 +42,7 @@
 				"box" : 				{
 					"comment" : "material",
 					"id" : "obj-10",
-					"index" : 8,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -67,7 +67,7 @@
 				"box" : 				{
 					"comment" : "mesh",
 					"id" : "obj-2",
-					"index" : 7,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -80,7 +80,7 @@
 				"box" : 				{
 					"comment" : "Variable (d)",
 					"id" : "obj-26",
-					"index" : 6,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -93,7 +93,7 @@
 				"box" : 				{
 					"comment" : "Variable (c)",
 					"id" : "obj-25",
-					"index" : 5,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -106,7 +106,7 @@
 				"box" : 				{
 					"comment" : "Variable (b)",
 					"id" : "obj-24",
-					"index" : 4,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -119,7 +119,7 @@
 				"box" : 				{
 					"comment" : "Variable (a)",
 					"id" : "obj-23",
-					"index" : 3,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -132,7 +132,7 @@
 				"box" : 				{
 					"comment" : "Add metro (input 2D matrix - pos)",
 					"id" : "obj-22",
-					"index" : 2,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -145,11 +145,11 @@
 				"box" : 				{
 					"comment" : "Test bang (add button, 1 sample) to 2D noise",
 					"id" : "obj-21",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "bang" ],
+					"outlettype" : [ "" ],
 					"patching_rect" : [ 54.0, 96.0, 30.0, 30.0 ]
 				}
 
@@ -225,8 +225,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 11,
+							"minor" : 2,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -894,10 +894,10 @@
 , 							{
 								"name" : "dvnt2",
 								"default" : 								{
-									"color" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-									"elementcolor" : [ 0.681193, 0.750541, 0.758255, 1.0 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"color" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"elementcolor" : [ 0.681193, 0.750541, 0.758255, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -943,10 +943,10 @@
 , 							{
 								"name" : "myrPattr",
 								"default" : 								{
-									"accentcolor" : [ 0.945098, 0.913725, 0.407843, 1.0 ],
-									"fontname" : [ "Arial" ],
 									"fontface" : [ 0 ],
-									"fontsize" : [ 12.0 ]
+									"fontsize" : [ 12.0 ],
+									"accentcolor" : [ 0.945098, 0.913725, 0.407843, 1.0 ],
+									"fontname" : [ "Arial" ]
 								}
 ,
 								"parentstyle" : "",
@@ -973,9 +973,9 @@
 , 							{
 								"name" : "myrSubpatch",
 								"default" : 								{
+									"fontsize" : [ 12.0 ],
 									"accentcolor" : [ 0.082353, 0.431373, 0.411765, 1.0 ],
-									"fontname" : [ "Arial" ],
-									"fontsize" : [ 12.0 ]
+									"fontname" : [ "Arial" ]
 								}
 ,
 								"parentstyle" : "",
@@ -1011,8 +1011,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1224,6 +1224,8 @@
 
 			}
  ],
+		"dependency_cache" : [  ],
+		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "AudioStatus_Menu",
 				"default" : 				{
@@ -1254,10 +1256,10 @@
 , 			{
 				"name" : "dvnt2",
 				"default" : 				{
-					"color" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"elementcolor" : [ 0.681193, 0.750541, 0.758255, 1.0 ],
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"color" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"elementcolor" : [ 0.681193, 0.750541, 0.758255, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -1303,10 +1305,10 @@
 , 			{
 				"name" : "myrPattr",
 				"default" : 				{
-					"accentcolor" : [ 0.945098, 0.913725, 0.407843, 1.0 ],
-					"fontname" : [ "Arial" ],
 					"fontface" : [ 0 ],
-					"fontsize" : [ 12.0 ]
+					"fontsize" : [ 12.0 ],
+					"accentcolor" : [ 0.945098, 0.913725, 0.407843, 1.0 ],
+					"fontname" : [ "Arial" ]
 				}
 ,
 				"parentstyle" : "",
@@ -1333,9 +1335,9 @@
 , 			{
 				"name" : "myrSubpatch",
 				"default" : 				{
+					"fontsize" : [ 12.0 ],
 					"accentcolor" : [ 0.082353, 0.431373, 0.411765, 1.0 ],
-					"fontname" : [ "Arial" ],
-					"fontsize" : [ 12.0 ]
+					"fontname" : [ "Arial" ]
 				}
 ,
 				"parentstyle" : "",
@@ -1371,8 +1373,8 @@
 , 			{
 				"name" : "newobjYellow-1",
 				"default" : 				{
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-					"fontsize" : [ 12.059008 ]
+					"fontsize" : [ 12.059008 ],
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 				}
 ,
 				"parentstyle" : "",

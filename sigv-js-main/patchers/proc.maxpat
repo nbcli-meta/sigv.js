@@ -69,8 +69,8 @@
 					"numinlets" : 12,
 					"numoutlets" : 12,
 					"outlettype" : [ "", "", "", "", "", "", "", "", "", "", "", "" ],
-					"patching_rect" : [ 26.0, 92.0, 346.0, 23.0 ],
-					"text" : "route gs clocker scale period time bfg slide material mesh anim ^"
+					"patching_rect" : [ 26.0, 92.0, 355.0, 23.0 ],
+					"text" : "route gs clocker scale period time bfg slide material mesh anim aio"
 				}
 
 			}
@@ -223,15 +223,6 @@
 
 			}
  ],
-		"dependency_cache" : [ 			{
-				"name" : "procedural.maxpat",
-				"bootpath" : "~/sigv.js/sigv-js-main/patchers",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
- ],
-		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "AudioStatus_Menu",
 				"default" : 				{
@@ -262,10 +253,10 @@
 , 			{
 				"name" : "dvnt2",
 				"default" : 				{
-					"color" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"elementcolor" : [ 0.681193, 0.750541, 0.758255, 1.0 ],
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+					"color" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"elementcolor" : [ 0.681193, 0.750541, 0.758255, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -312,8 +303,8 @@
 				"name" : "myrPattr",
 				"default" : 				{
 					"fontname" : [ "Arial" ],
-					"accentcolor" : [ 0.945098, 0.913725, 0.407843, 1.0 ],
 					"fontface" : [ 0 ],
+					"accentcolor" : [ 0.945098, 0.913725, 0.407843, 1.0 ],
 					"fontsize" : [ 12.0 ]
 				}
 ,
@@ -389,6 +380,12 @@
 , 			{
 				"name" : "sigv.js",
 				"default" : 				{
+					"patchlinecolor" : [ 0.086274509803922, 0.266666666666667, 0.345098039215686, 1.0 ],
+					"editing_bgcolor" : [ 0.049247920513153, 0.058372475206852, 0.068464912474155, 1.0 ],
+					"textcolor" : [ 0.6, 0.772549019607843, 1.0, 1.0 ],
+					"fontname" : [ "Lato" ],
+					"clearcolor" : [ 0.07058823529, 0.1058823529, 0.1647058824, 1.0 ],
+					"textcolor_inverse" : [ 0.67843137254902, 0.713725490196078, 0.76078431372549, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.07799056917429, 0.098447218537331, 0.10713404417038, 1.0 ],
@@ -396,18 +393,12 @@
 						"color" : [ 0.2, 0.2, 0.2, 1.0 ]
 					}
 ,
-					"patchlinecolor" : [ 0.086274509803922, 0.266666666666667, 0.345098039215686, 1.0 ],
-					"editing_bgcolor" : [ 0.049247920513153, 0.058372475206852, 0.068464912474155, 1.0 ],
-					"color" : [ 0.0, 0.431372549019608, 1.0, 1.0 ],
-					"fontname" : [ "Lato" ],
-					"accentcolor" : [ 0.07799056917429, 0.098447218537331, 0.10713404417038, 1.0 ],
 					"bgcolor" : [ 0.070588235294118, 0.105882352941176, 0.164705882352941, 1.0 ],
-					"elementcolor" : [ 0.57438737154007, 0.665937542915344, 0.915809035301208, 1.0 ],
 					"selectioncolor" : [ 0.45281594991684, 0.528640389442444, 0.598021566867828, 1.0 ],
 					"locked_bgcolor" : [ 0.049247920513153, 0.058372475206852, 0.068464912474155, 1.0 ],
-					"clearcolor" : [ 0.07058823529, 0.1058823529, 0.1647058824, 1.0 ],
-					"textcolor_inverse" : [ 0.67843137254902, 0.713725490196078, 0.76078431372549, 1.0 ],
-					"textcolor" : [ 0.6, 0.772549019607843, 1.0, 1.0 ]
+					"accentcolor" : [ 0.07799056917429, 0.098447218537331, 0.10713404417038, 1.0 ],
+					"color" : [ 0.0, 0.431372549019608, 1.0, 1.0 ],
+					"elementcolor" : [ 0.57438737154007, 0.665937542915344, 0.915809035301208, 1.0 ]
 				}
 ,
 				"parentstyle" : "",

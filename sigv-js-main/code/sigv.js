@@ -1,4 +1,8 @@
 
+function test() {
+  var gs = this.patcher.newdefault(0,100,'jit.gl.gridshape','monde');
+}
+
 // Generate Patch
 var rcoda = this.patcher.newdefault(99,165.5,'r','coda');
 var jsrt = this.patcher.newdefault(99,194.5,'route','js');
@@ -50,6 +54,9 @@ function wrld(param) {
     var tilde = this.patcher.newdefault(0,0,'tilde');
     var bfg = this.patcher.newdefault(0,0,'bfg');
     var terminal = this.patcher.newdefault(0,0,'terminal');
+
+    outlet(0,'light','enable',1);
+    outlet(0,'light','activate',0);
   }
 
   if (param == 1) {
@@ -258,6 +265,15 @@ function demo() {
   outlet(0,'grid','mesh','rotatexyz',90,0,0);
 }
 
+function ritt() {
+  outlet(0,'light','enable',0);
+  outlet(0,'proc','mesh','enable',1);
+  outlet(0,'proc','mesh','scale',.5);
+  outlet(0,'proc','anim','turn',0,1,0);
+  outlet(0,'proc','mesh','scale',20);
+  outlet(0,'proc','scale',0);
+}
+
 function osm() {
   gridObject();
   outlet(0,'light','enable',0);
@@ -282,10 +298,8 @@ function osm() {
 }
 
 function third() {
-  wrld(2);
   outlet(0,'model','enable',0);
   outlet(0,'model','^','enable',1);
-  outlet(0,'model','^','draw_mode','tri_strip');
   outlet(0,'model','^','material','emission_texture','mtex');
   outlet(0,'model','^','read');
 }
@@ -326,10 +340,42 @@ function krypton() {
   outlet(0,'grid','^',1,10000);
 }
 
+function tub1() {
+  outlet(0,'model','enable',0);
+  outlet(0,'model','^','enable',1);
+  outlet(0,'model','^','material','emission_texture','mtex');
+  outlet(0,'model','^','read','Bathtub.dae');
+  outlet(0,'model','^','anim','turn',0,.075,0);
+}
+
+function tub2() {
+  outlet(0,'model','^','anim','scaleto',0.25,0.25,0.25,10);
+  outlet(0,'model','^','anim','springto',2.25,-1.15,0);
+}
+
 function lorenz1() {
   var lorenz = this.patcher.newdefault(0,0,'lorenz-system');
-  wrld(2);
+  light();
+  light();
+  light();
+  outlet(0,'light','activate',0);
   lorenzObject();
+}
+
+function lorenz2() {
+  outlet(0,'lorenz','anim','scaleto',1.2,1.2,1.2,10);
+  outlet(0,'lorenz','mesh','point_size',1.5);
+  outlet(0,'lorenz','material','diffuse_texture','bfg');
+  outlet(0,'lorenz','material','emission_texture','bfg');
+  outlet(0,'lorenz','material','normals_texture','bfg');
+  outlet(0,'lorenz','material','heightmap_texture','bfg');
+  outlet(0,'lorenz','material','specular_model','toon');
+  outlet(0,'lorenz','material','shininess',20);
+  outlet(0,'lorenz','material','mat_specular',0.2,0,0.3);
+}
+
+function lorenz3() {
+  outlet(0,'aio','activate',2);
 }
 
 function burke1() {
@@ -358,7 +404,31 @@ function quadrant() {
   outlet(0,'aio','sigy',1);
   outlet(0,'wave','mesh','enable',1);
   outlet(0,'wave','para','sphere');
-  outlet(0,'wave','para','^',.4,2000);
+  outlet(0,'wave','aio','^',.4,2000);
+  outlet(0,'wave','mesh','scale',0.5);
+  outlet(0,'wave','material','mat_emission',1,1,1);
+  outlet(0,'wave','material','mat_diffuse',.2,.2,.2, .5);
+  outlet(0,'wave','mesh','draw_mode','quad_grid');
+  outlet(0,'wave','mesh','poly_mode',1,1);
+
+}
+
+function quadrant2() {
+  outlet(0,'wave','fpic','bang');
+  outlet(0,'wave','material','diffuse_texture','wave');
+  outlet(0,'wave','material','emission_texture','wave');
+  outlet(0,'wave','material','normals_texture','wave');
+  outlet(0,'light','activate',0);
+  outlet(0,'wave','material','mat_emission',.1,.1,.1);
+  outlet(0,'grid','material','mat_diffuse',.2,.2,.2, .5);
+  outlet(0,'grid','mesh','enable',1);
+  outlet(0,'grid','mesh','draw_mode','quad_grid');
+  outlet(0,'grid','mesh','poly_mode',1,1);
+  outlet(0,'aio','activate',2);
+  outlet(0,'wave','anim','turn',0,0,.5);
+  outlet(0,'wave','mesh','enable',1);
+  outlet(0,'wave','para','sphere');
+  outlet(0,'wave','aio','^',.4,2000);
   outlet(0,'wave','mesh','scale',0.1);
   outlet(0,'wave','material','mat_emission',.35,.35,.35);
 

@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 11,
+			"minor" : 2,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 1067.0, 73.0, 398.0, 446.0 ],
+		"rect" : [ 708.0, 127.0, 375.0, 419.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,6 +39,30 @@
 		"subpatcher_template" : "sigv.js",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-25",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 272.5, 292.0, 54.0, 23.0 ],
+					"text" : "name $1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-22",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 333.0, 72.0, 24.0, 24.0 ]
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-7",
 					"maxclass" : "newobj",
@@ -161,7 +185,7 @@
 					"bgfillcolor_proportion" : 0.39,
 					"bgfillcolor_type" : "gradient",
 					"id" : "obj-21",
-					"items" : "Max 1",
+					"items" : [ "[M] MIDI Main", ",", "[M] MIDI Live", ",", "[M] MIDI Sonic Pi", ",", "[M] MIDI Logic", ",", "[M] MIDI Korg", ",", "[M] MIDI Misc", ",", "to Max 1", ",", "to Max 2" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -179,8 +203,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 232.0, 23.0, 102.0, 23.0 ],
-					"text" : "loadmess \"Max 1\""
+					"patching_rect" : [ 232.0, 23.0, 67.0, 23.0 ],
+					"text" : "loadmess 0"
 				}
 
 			}
@@ -190,8 +214,8 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 189.0, 272.0, 136.0, 23.0 ],
-					"text" : "midiout @name \"Max 1\""
+					"patching_rect" : [ 189.0, 373.0, 49.0, 23.0 ],
+					"text" : "midiout"
 				}
 
 			}
@@ -225,8 +249,8 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 126.5, 348.0, 146.0, 23.0 ],
-					"text" : "pgmout 0 @name \"Max 1\""
+					"patching_rect" : [ 126.5, 348.0, 59.0, 23.0 ],
+					"text" : "pgmout 0"
 				}
 
 			}
@@ -243,6 +267,10 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 33.5, 41.0, 23.0, 15.0 ],
 					"saved_attribute_attributes" : 					{
+						"activebgcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
 							"parameter_enum" : [ "0", "15" ],
 							"parameter_longname" : "live.numbox[20]",
@@ -272,6 +300,10 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 19.5, 17.0, 50.0, 63.0 ],
 					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
 							"parameter_longname" : "live.dial[35]",
 							"parameter_mmax" : 15.0,
@@ -400,6 +432,18 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 404.0, 29.0, 41.0, 48.0 ],
 					"saved_attribute_attributes" : 					{
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
 							"parameter_longname" : "live.dial[36]",
 							"parameter_shortname" : "live.dial",
@@ -420,8 +464,8 @@
 					"maxclass" : "newobj",
 					"numinlets" : 3,
 					"numoutlets" : 0,
-					"patching_rect" : [ 31.0, 380.0, 136.0, 23.0 ],
-					"text" : "ctlout 2 @name \"Max 1\""
+					"patching_rect" : [ 31.0, 380.0, 49.0, 23.0 ],
+					"text" : "ctlout 2"
 				}
 
 			}
@@ -500,7 +544,24 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-20", 0 ],
+					"order" : 0,
 					"source" : [ "obj-21", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-25", 0 ],
+					"order" : 1,
+					"source" : [ "obj-21", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-21", 0 ],
+					"midpoints" : [ 342.5, 103.571426500000001, 241.5, 103.571426500000001 ],
+					"source" : [ "obj-22", 0 ]
 				}
 
 			}
@@ -508,6 +569,33 @@
 				"patchline" : 				{
 					"destination" : [ "obj-4", 0 ],
 					"source" : [ "obj-24", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-11", 0 ],
+					"midpoints" : [ 282.0, 347.0, 40.5, 347.0 ],
+					"order" : 2,
+					"source" : [ "obj-25", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-136", 0 ],
+					"midpoints" : [ 282.0, 331.0, 136.0, 331.0 ],
+					"order" : 1,
+					"source" : [ "obj-25", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-19", 0 ],
+					"midpoints" : [ 282.0, 343.5, 198.5, 343.5 ],
+					"order" : 0,
+					"source" : [ "obj-25", 0 ]
 				}
 
 			}
@@ -605,7 +693,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-11", 2 ],
-					"midpoints" : [ 90.833333333333343, 227.5, 157.5, 227.5 ],
+					"midpoints" : [ 90.833333333333343, 227.5, 70.5, 227.5 ],
 					"source" : [ "obj-50", 2 ]
 				}
 
@@ -656,27 +744,23 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-22", 0 ],
+					"midpoints" : [ 241.5, 58.5, 342.5, 58.5 ],
+					"order" : 0,
+					"source" : [ "obj-9", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-7", 1 ],
+					"midpoints" : [ 241.5, 62.0, 273.5, 62.0 ],
+					"order" : 1,
 					"source" : [ "obj-9", 0 ]
 				}
 
 			}
  ],
-		"parameters" : 		{
-			"obj-1" : [ "live.dial[35]", "live.dial", 0 ],
-			"obj-12" : [ "live.dial[36]", "live.dial", 0 ],
-			"obj-24" : [ "live.text", "live.text", 0 ],
-			"obj-26" : [ "live.text[1]", "live.text", 0 ],
-			"obj-52" : [ "live.numbox[20]", "live.numbox", 0 ],
-			"parameterbanks" : 			{
-
-			}
-,
-			"inherited_shortname" : 1
-		}
-,
-		"dependency_cache" : [  ],
-		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "AudioStatus_Menu",
 				"default" : 				{
@@ -707,8 +791,8 @@
 , 			{
 				"name" : "dvnt2",
 				"default" : 				{
-					"color" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"elementcolor" : [ 0.681193, 0.750541, 0.758255, 1.0 ],
+					"color" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
@@ -756,10 +840,10 @@
 , 			{
 				"name" : "myrPattr",
 				"default" : 				{
-					"fontface" : [ 0 ],
-					"fontsize" : [ 12.0 ],
 					"accentcolor" : [ 0.945098, 0.913725, 0.407843, 1.0 ],
-					"fontname" : [ "Arial" ]
+					"fontname" : [ "Arial" ],
+					"fontface" : [ 0 ],
+					"fontsize" : [ 12.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -786,9 +870,9 @@
 , 			{
 				"name" : "myrSubpatch",
 				"default" : 				{
-					"fontsize" : [ 12.0 ],
 					"accentcolor" : [ 0.082353, 0.431373, 0.411765, 1.0 ],
-					"fontname" : [ "Arial" ]
+					"fontname" : [ "Arial" ],
+					"fontsize" : [ 12.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -824,8 +908,8 @@
 , 			{
 				"name" : "newobjYellow-1",
 				"default" : 				{
-					"fontsize" : [ 12.059008 ],
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+					"fontsize" : [ 12.059008 ]
 				}
 ,
 				"parentstyle" : "",
@@ -844,25 +928,25 @@
 , 			{
 				"name" : "sigv.js",
 				"default" : 				{
+					"editing_bgcolor" : [ 0.049247920513153, 0.058372475206852, 0.068464912474155, 1.0 ],
+					"accentcolor" : [ 0.07799056917429, 0.098447218537331, 0.10713404417038, 1.0 ],
+					"fontname" : [ "Lato" ],
+					"patchlinecolor" : [ 0.086274509803922, 0.266666666666667, 0.345098039215686, 1.0 ],
+					"elementcolor" : [ 0.57438737154007, 0.665937542915344, 0.915809035301208, 1.0 ],
+					"clearcolor" : [ 0.07058823529, 0.1058823529, 0.1647058824, 1.0 ],
+					"color" : [ 0.0, 0.431372549019608, 1.0, 1.0 ],
+					"bgcolor" : [ 0.070588235294118, 0.105882352941176, 0.164705882352941, 1.0 ],
+					"textcolor_inverse" : [ 0.67843137254902, 0.713725490196078, 0.76078431372549, 1.0 ],
+					"selectioncolor" : [ 0.45281594991684, 0.528640389442444, 0.598021566867828, 1.0 ],
 					"textcolor" : [ 0.6, 0.772549019607843, 1.0, 1.0 ],
+					"locked_bgcolor" : [ 0.049247920513153, 0.058372475206852, 0.068464912474155, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.07799056917429, 0.098447218537331, 0.10713404417038, 1.0 ],
 						"color2" : [ 0.07058823529, 0.1058823529, 0.1647058824, 1.0 ],
 						"color" : [ 0.2, 0.2, 0.2, 1.0 ]
 					}
-,
-					"selectioncolor" : [ 0.45281594991684, 0.528640389442444, 0.598021566867828, 1.0 ],
-					"color" : [ 0.0, 0.431372549019608, 1.0, 1.0 ],
-					"editing_bgcolor" : [ 0.049247920513153, 0.058372475206852, 0.068464912474155, 1.0 ],
-					"accentcolor" : [ 0.07799056917429, 0.098447218537331, 0.10713404417038, 1.0 ],
-					"clearcolor" : [ 0.07058823529, 0.1058823529, 0.1647058824, 1.0 ],
-					"locked_bgcolor" : [ 0.049247920513153, 0.058372475206852, 0.068464912474155, 1.0 ],
-					"elementcolor" : [ 0.57438737154007, 0.665937542915344, 0.915809035301208, 1.0 ],
-					"fontname" : [ "Lato" ],
-					"patchlinecolor" : [ 0.086274509803922, 0.266666666666667, 0.345098039215686, 1.0 ],
-					"bgcolor" : [ 0.070588235294118, 0.105882352941176, 0.164705882352941, 1.0 ],
-					"textcolor_inverse" : [ 0.67843137254902, 0.713725490196078, 0.76078431372549, 1.0 ]
+
 				}
 ,
 				"parentstyle" : "",

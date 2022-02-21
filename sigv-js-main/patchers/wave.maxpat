@@ -482,10 +482,10 @@
 , 											{
 												"name" : "dvnt2",
 												"default" : 												{
-													"color" : [ 0.0, 0.0, 0.0, 1.0 ],
-													"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 													"elementcolor" : [ 0.681193, 0.750541, 0.758255, 1.0 ],
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+													"color" : [ 0.0, 0.0, 0.0, 1.0 ],
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+													"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -531,8 +531,8 @@
 , 											{
 												"name" : "myrPattr",
 												"default" : 												{
-													"fontname" : [ "Arial" ],
 													"accentcolor" : [ 0.945098, 0.913725, 0.407843, 1.0 ],
+													"fontname" : [ "Arial" ],
 													"fontface" : [ 0 ],
 													"fontsize" : [ 12.0 ]
 												}
@@ -561,8 +561,8 @@
 , 											{
 												"name" : "myrSubpatch",
 												"default" : 												{
-													"fontname" : [ "Arial" ],
 													"accentcolor" : [ 0.082353, 0.431373, 0.411765, 1.0 ],
+													"fontname" : [ "Arial" ],
 													"fontsize" : [ 12.0 ]
 												}
 ,
@@ -4933,10 +4933,10 @@
 , 							{
 								"name" : "dvnt2",
 								"default" : 								{
-									"color" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"elementcolor" : [ 0.681193, 0.750541, 0.758255, 1.0 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"color" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -4982,8 +4982,8 @@
 , 							{
 								"name" : "myrPattr",
 								"default" : 								{
-									"fontname" : [ "Arial" ],
 									"accentcolor" : [ 0.945098, 0.913725, 0.407843, 1.0 ],
+									"fontname" : [ "Arial" ],
 									"fontface" : [ 0 ],
 									"fontsize" : [ 12.0 ]
 								}
@@ -5012,8 +5012,8 @@
 , 							{
 								"name" : "myrSubpatch",
 								"default" : 								{
-									"fontname" : [ "Arial" ],
 									"accentcolor" : [ 0.082353, 0.431373, 0.411765, 1.0 ],
+									"fontname" : [ "Arial" ],
 									"fontsize" : [ 12.0 ]
 								}
 ,
@@ -5458,8 +5458,8 @@
 					"numinlets" : 7,
 					"numoutlets" : 7,
 					"outlettype" : [ "", "", "", "", "", "", "" ],
-					"patching_rect" : [ 30.0, 88.0, 201.0, 23.0 ],
-					"text" : "route material anim para fpic mesh ^"
+					"patching_rect" : [ 30.0, 88.0, 209.0, 23.0 ],
+					"text" : "route material anim para fpic mesh aio"
 				}
 
 			}
@@ -5502,7 +5502,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-11", 0 ],
-					"midpoints" : [ 100.166666666666657, 140.5, 119.5, 140.5 ],
+					"midpoints" : [ 102.833333333333343, 140.5, 119.5, 140.5 ],
 					"source" : [ "obj-2", 2 ]
 				}
 
@@ -5510,7 +5510,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-14", 0 ],
-					"midpoints" : [ 160.833333333333314, 407.0, 120.0, 407.0 ],
+					"midpoints" : [ 166.166666666666686, 407.0, 120.0, 407.0 ],
 					"source" : [ "obj-2", 4 ]
 				}
 
@@ -5526,7 +5526,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-64", 0 ],
-					"midpoints" : [ 130.5, 140.0, 260.5, 140.0 ],
+					"midpoints" : [ 134.5, 140.0, 260.5, 140.0 ],
 					"source" : [ "obj-2", 3 ]
 				}
 
@@ -5685,10 +5685,10 @@
 , 			{
 				"name" : "dvnt2",
 				"default" : 				{
-					"color" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"elementcolor" : [ 0.681193, 0.750541, 0.758255, 1.0 ],
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+					"color" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -5734,8 +5734,8 @@
 , 			{
 				"name" : "myrPattr",
 				"default" : 				{
-					"fontname" : [ "Arial" ],
 					"accentcolor" : [ 0.945098, 0.913725, 0.407843, 1.0 ],
+					"fontname" : [ "Arial" ],
 					"fontface" : [ 0 ],
 					"fontsize" : [ 12.0 ]
 				}
@@ -5764,8 +5764,8 @@
 , 			{
 				"name" : "myrSubpatch",
 				"default" : 				{
-					"fontname" : [ "Arial" ],
 					"accentcolor" : [ 0.082353, 0.431373, 0.411765, 1.0 ],
+					"fontname" : [ "Arial" ],
 					"fontsize" : [ 12.0 ]
 				}
 ,
