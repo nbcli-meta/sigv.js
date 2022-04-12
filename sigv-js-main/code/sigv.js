@@ -233,6 +233,10 @@ function count() {
   var count = this.patcher.newdefault(0,0,'count');
 }
 
+function asl() {
+  var asl = this.patcher.newdefault(0,0,'asl');
+}
+
 // sigv composition modes
 function auto() {
   wrld(2);
@@ -290,7 +294,7 @@ function osm() {
   // specs();
   outlet(0,'aio','peak',0.32);
   outlet(0,'aio','peak','line',2);
-  outlet(0,'grid','fpic','read','/Users/magfoto/Desktop/[ M ] Studio/material/osmosis material/IMG_4892.JPG');
+  outlet(0,'grid','fpic','read','/Users/magfoto/Desktop/[ M ] Studio/material/osmosis material/DSC03511.jpg');
   outlet(0,'grid','fpic','bang');
   outlet(0,'grid','mesh','scale',9);
   outlet(0,'grid','anim','turn',0,0,-.025);
@@ -351,6 +355,11 @@ function tub1() {
 function tub2() {
   outlet(0,'model','^','anim','scaleto',0.25,0.25,0.25,10);
   outlet(0,'model','^','anim','springto',2.25,-1.15,0);
+}
+
+function strange1() {
+  wrld(2);
+  lorenz1();
 }
 
 function lorenz1() {
