@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 1147.0, 657.0, 825.0, 276.0 ],
+		"rect" : [ 351.0, 403.0, 1100.0, 283.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,6 +40,54 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-32",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 943.0, 107.0, 152.0, 23.0 ],
+					"text" : "prepend grain density ^"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-30",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 892.0, 151.0, 137.0, 23.0 ],
+					"text" : "prepend grain position ^"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-29",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 864.0, 53.0, 121.0, 23.0 ],
+					"text" : "prepend grain pitch ^"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-22",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 826.0, 101.0, 114.0, 23.0 ],
+					"text" : "prepend grain size ^"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-21",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -57,7 +105,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 539.0, 207.0, 71.0, 23.0 ],
+					"patching_rect" : [ 539.0, 196.0, 71.0, 23.0 ],
 					"text" : "fromsymbol"
 				}
 
@@ -82,7 +130,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 538.0, 136.0, 261.0, 23.0 ],
-					"text" : "\"grid mesh scale\" 59.034729"
+					"text" : "\"grain target 0\""
 				}
 
 			}
@@ -92,7 +140,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 504.0, 244.0, 42.0, 23.0 ],
+					"patching_rect" : [ 539.0, 226.0, 42.0, 23.0 ],
 					"text" : "s coda"
 				}
 
@@ -101,11 +149,11 @@
 				"box" : 				{
 					"id" : "obj-20",
 					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 510.0, 44.0, 65.0, 23.0 ],
-					"text" : "route /sigv"
+					"numinlets" : 5,
+					"numoutlets" : 5,
+					"outlettype" : [ "", "", "", "", "" ],
+					"patching_rect" : [ 510.0, 44.0, 111.0, 23.0 ],
+					"text" : "route /sigv /1 /2 /3"
 				}
 
 			}
@@ -884,6 +932,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-27", 1 ],
+					"midpoints" : [ 519.5, 101.0, 789.5, 101.0 ],
 					"order" : 0,
 					"source" : [ "obj-20", 0 ]
 				}
@@ -892,6 +941,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-28", 0 ],
+					"midpoints" : [ 519.5, 77.0, 547.5, 77.0 ],
 					"order" : 1,
 					"source" : [ "obj-20", 0 ]
 				}

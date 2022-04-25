@@ -1,8 +1,4 @@
 
-function test() {
-  var gs = this.patcher.newdefault(0,100,'jit.gl.geoshape','monde');
-}
-
 // Generate Patch
 var rcoda = this.patcher.newdefault(99,165.5,'r','coda');
 var jsrt = this.patcher.newdefault(99,194.5,'route','js');
@@ -32,21 +28,22 @@ var meter = this.patcher.newdefault(185.5,113.,'live.meter~','@presentation',1,'
 
 this.patcher.connect(saudio,0,meter,0);
 
-// init monde
+// init sigv (world) and monde (sub-world)
 function wrld(param) {
 
   if (param == 2) {
-    var monde = this.patcher.newdefault(0,0,'jit.world','monde','@visible',1,'@enable',1,'@size',1024,575,'@dim',1920,1080,'@erase_color',0,0,0,1,'@fsaa',1);
+    var sigv = this.patcher.newdefault(0,0,'jit.world','sigv','@visible',1,'@enable',1,'@size',1024,575,'@dim',1920,1080,'@erase_color',0,0,0,1,'@fsaa',1);
     var metro = this.patcher.newdefault(0,0,'send','metro');
-    this.patcher.connect(monde,1,metro,0);
+    this.patcher.connect(sigv,1,metro,0);
     var camera = this.patcher.newdefault(0,0,'jit.gl.camera','@position',0,0,4);
     var movie = this.patcher.newdefault(0,0,'jit.movie','@output_texture',0);
-    this.patcher.connect(movie,0,monde,0);
+    this.patcher.connect(movie,0,sigv,0);
     var movie_route = this.patcher.newdefault(0,0,'route','movie');
     this.patcher.connect(movie_route,0,movie,0);
     var rcoda = this.patcher.newdefault(0,0,'r','coda');
     this.patcher.connect(rcoda,0,movie_route,0);
-    var geo = this.patcher.newdefault(0,0,'geo');
+    var monde = this.patcher.newdefault(275.,304.,'jit.gl.node','sigv','@name','monde');
+    var geo = this.patcher.newdefault(99,404.5,'geo');
     var aio = this.patcher.newdefault(0,0,'aio');
     var model = this.patcher.newdefault(0,0,'model');
     var proc = this.patcher.newdefault(0,0,'proc');
@@ -60,36 +57,38 @@ function wrld(param) {
   }
 
   if (param == 1) {
-    var monde = this.patcher.newdefault(0,0,'jit.world','monde','@visible',1,'@enable',1,'@size',1024,575,'@dim',1920,1080,'@erase_color',0,0,0,1,'@fsaa',1);
+    var sigv = this.patcher.newdefault(0,0,'jit.world','sigv','@visible',1,'@enable',1,'@size',1024,575,'@dim',1920,1080,'@erase_color',0,0,0,1,'@fsaa',1);
     var metro = this.patcher.newdefault(0,0,'send','metro');
-    this.patcher.connect(monde,1,metro,0);
+    this.patcher.connect(sigv,1,metro,0);
     var camera = this.patcher.newdefault(0,0,'jit.gl.camera','@position',0,0,4);
     var rcoda = this.patcher.newdefault(0,0,'r','coda');
-    this.patcher.connect()
+    var monde = this.patcher.newdefault(275.,304.,'jit.gl.node','sigv','@name','monde');
   }
 
   if (param == 0) {
-    var monde = this.patcher.newdefault(0,0,'jit.world','monde','@visible',0,'@enable',1,'@size',1024,575,'@dim',1920,1080,'@erase_color',0,0,0,1,'@fsaa',1);
+    var sigv = this.patcher.newdefault(0,0,'jit.world','sigv','@visible',0,'@enable',1,'@size',1024,575,'@dim',1920,1080,'@erase_color',0,0,0,1,'@fsaa',1);
     var metro = this.patcher.newdefault(0,0,'send','metro');
-    this.patcher.connect(monde,1,metro,0);
+    this.patcher.connect(sigv,1,metro,0);
     var camera = this.patcher.newdefault(0,0,'jit.gl.camera','@position',0,0,4);
+    var monde = this.patcher.newdefault(275.,304.,'jit.gl.node','sigv','@name','monde');
   }
 
   if (param == 3) {
-    var monde = this.patcher.newdefault(0,0,'jit.world','monde','@visible',1,'@enable',1,'@size',1024,575,'@dim',1920,1080,'@erase_color',0,0,0,1,'@fsaa',1);
+    var sigv = this.patcher.newdefault(0,0,'jit.world','sigv','@visible',1,'@enable',1,'@size',1024,575,'@dim',1920,1080,'@erase_color',0,0,0,1,'@fsaa',1);
     var metro = this.patcher.newdefault(0,0,'send','metro');
-    this.patcher.connect(monde,1,metro,0);
+    this.patcher.connect(sigv,1,metro,0);
     var camera = this.patcher.newdefault(0,0,'jit.gl.camera','@position',0,0,4);
     var camera_route = this.patcher.newdefault(0,0,'route','camera');
     this.patcher.connect(camera_route,0,camera,0);
     var rcoda = this.patcher.newdefault(0,0,'r','coda');
     this.patcher.connect(rcoda,0,camera_route,0);
     var movie = this.patcher.newdefault(0,0,'jit.movie','@output_texture',0);
-    this.patcher.connect(movie,0,monde,0);
+    this.patcher.connect(movie,0,sigv,0);
     var movie_route = this.patcher.newdefault(0,0,'route','movie');
     this.patcher.connect(movie_route,0,movie,0);
     this.patcher.connect(rcoda,0,movie_route,0);
-    var geo = this.patcher.newdefault(0,0,'geo');
+    var monde = this.patcher.newdefault(275.,304.,'jit.gl.node','sigv','@name','monde');
+    var geo = this.patcher.newdefault(99,404.5,'geo');
     var aio = this.patcher.newdefault(0,0,'aio');
     var model = this.patcher.newdefault(0,0,'model');
     var proc = this.patcher.newdefault(0,0,'proc');
@@ -124,7 +123,7 @@ function aio() {
 }
 
 function geo() {
-  var geo = this.patcher.newdefault(0,0,'geo');
+  var geo = this.patcher.newdefault(99,404.5,'geo');
 }
 
 function model() {
@@ -392,24 +391,20 @@ function osci() {
 }
 
 function quadrant() {
-  outlet(0,'geo','material','mat_emission',.1,.1,.1);
-  outlet(0,'geo','material','mat_diffuse',.2,.2,.2, .5);
+  outlet(0,'geo','material','mat_emission',.5,.5,.5);
   outlet(0,'geo','mesh','enable',1);
-  outlet(0,'geo','mesh','draw_mode','quad_geo');
+  outlet(0,'geo','mesh','draw_mode','tri_grid');
   outlet(0,'geo','mesh','poly_mode',1,1);
   outlet(0,'aio','activate',2);
-  outlet(0,'aio','sig',1);
-  outlet(0,'aio','sigx',1);
-  outlet(0,'aio','sigy',1);
-  outlet(0,'wave','mesh','enable',1);
-  outlet(0,'wave','para','sphere');
-  outlet(0,'wave','aio','^',.4,2000);
-  outlet(0,'wave','mesh','scale',0.5);
-  outlet(0,'wave','material','mat_emission',1,1,1);
-  outlet(0,'wave','material','mat_diffuse',.2,.2,.2, .5);
-  outlet(0,'wave','mesh','draw_mode','quad_geo');
-  outlet(0,'wave','mesh','poly_mode',1,1);
-
+  outlet(0,'aio','sig',.1);
+  // outlet(0,'aio','sigx',1);
+  // outlet(0,'aio','sigy',1);
+  outlet(0,'geo','gs1','shape','sphere');
+  outlet(0,'geo','aio',1);
+  outlet(0,'geo','aio','^',.1,2000);
+  outlet(0,'geo','anim','scaleto',0.75,0.75,0.75,10);
+  outlet(0,'geo','anim','turn',0,.5,0);
+  // outlet(0,'light','enable',0);
 }
 
 function quadrant2() {
