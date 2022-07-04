@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
-			"revision" : 2,
+			"minor" : 3,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 351.0, 403.0, 1100.0, 283.0 ],
+		"rect" : [ 332.0, 785.0, 1110.0, 300.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -125,12 +125,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-27",
+					"linecount" : 3,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 538.0, 136.0, 261.0, 23.0 ],
-					"text" : "\"grain target 0\""
+					"patching_rect" : [ 538.0, 136.0, 92.0, 52.0 ],
+					"text" : "14 24 0 14 23 10 11 21 14 0 0 0 0 0 0 0"
 				}
 
 			}
@@ -364,8 +365,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 2,
+							"minor" : 3,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -598,13 +599,13 @@
 								"name" : "AudioStatus_Menu",
 								"default" : 								{
 									"bgfillcolor" : 									{
-										"type" : "color",
+										"angle" : 270.0,
+										"autogradient" : 0,
 										"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 										"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"angle" : 270.0,
 										"proportion" : 0.39,
-										"autogradient" : 0
+										"type" : "color"
 									}
 
 								}
@@ -754,10 +755,10 @@
 									"accentcolor" : [ 0.07799056917429, 0.098447218537331, 0.10713404417038, 1.0 ],
 									"bgcolor" : [ 0.070588235294118, 0.105882352941176, 0.164705882352941, 1.0 ],
 									"bgfillcolor" : 									{
-										"type" : "gradient",
+										"color" : [ 0.2, 0.2, 0.2, 1.0 ],
 										"color1" : [ 0.07799056917429, 0.098447218537331, 0.10713404417038, 1.0 ],
 										"color2" : [ 0.07058823529, 0.1058823529, 0.1647058824, 1.0 ],
-										"color" : [ 0.2, 0.2, 0.2, 1.0 ]
+										"type" : "gradient"
 									}
 ,
 									"clearcolor" : [ 0.07058823529, 0.1058823529, 0.1647058824, 1.0 ],
@@ -932,9 +933,27 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-27", 1 ],
-					"midpoints" : [ 519.5, 101.0, 789.5, 101.0 ],
+					"midpoints" : [ 542.5, 101.0, 620.5, 101.0 ],
+					"order" : 0,
+					"source" : [ "obj-20", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-27", 1 ],
+					"midpoints" : [ 519.5, 101.0, 620.5, 101.0 ],
 					"order" : 0,
 					"source" : [ "obj-20", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-28", 0 ],
+					"midpoints" : [ 542.5, 77.0, 547.5, 77.0 ],
+					"order" : 1,
+					"source" : [ "obj-20", 1 ]
 				}
 
 			}
@@ -1035,13 +1054,13 @@
 				"name" : "AudioStatus_Menu",
 				"default" : 				{
 					"bgfillcolor" : 					{
-						"type" : "color",
+						"angle" : 270.0,
+						"autogradient" : 0,
 						"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 						"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"angle" : 270.0,
 						"proportion" : 0.39,
-						"autogradient" : 0
+						"type" : "color"
 					}
 
 				}
@@ -1209,10 +1228,10 @@
 					"accentcolor" : [ 0.07799056917429, 0.098447218537331, 0.10713404417038, 1.0 ],
 					"bgcolor" : [ 0.070588235294118, 0.105882352941176, 0.164705882352941, 1.0 ],
 					"bgfillcolor" : 					{
-						"type" : "gradient",
+						"color" : [ 0.2, 0.2, 0.2, 1.0 ],
 						"color1" : [ 0.07799056917429, 0.098447218537331, 0.10713404417038, 1.0 ],
 						"color2" : [ 0.07058823529, 0.1058823529, 0.1647058824, 1.0 ],
-						"color" : [ 0.2, 0.2, 0.2, 1.0 ]
+						"type" : "gradient"
 					}
 ,
 					"clearcolor" : [ 0.07058823529, 0.1058823529, 0.1647058824, 1.0 ],

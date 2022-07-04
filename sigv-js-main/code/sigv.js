@@ -9,8 +9,6 @@ var scoda = this.patcher.newdefault(99,304.5,'s','coda');
 this.patcher.connect(this.box,0,jstrig,0);
 this.patcher.connect(jstrig,0,scoda,0);
 
-osc();
-
 var cmd = this.patcher.newdefault(27.5,83,'textedit','@presentation',1,'@lines',1,'@keymode',1,'@tabmode',0,'@wordwrap',0,'@patching_rect',27.5,83.,248.,24.,'@presentation_rect',6.,8.,248.,24.,'@bordercolor',0,0,0,0);
 var trig = this.patcher.newdefault(160.5,27,'trigger','select','clear');
 this.patcher.connect(cmd,0,trig,0);
@@ -23,7 +21,10 @@ this.patcher.connect(txtrt,0,bangrt,0);
 this.patcher.connect(bangrt,1,trig,0);
 this.patcher.connect(bangrt,1,scoda,0);
 
-var saudio = this.patcher.newdefault(208,116,'receive~','audio','@patching_rect',208.,116.,100.,23.);
+// var saudio = this.patcher.newdefault(208,116,'receive~','audio','@patching_rect',208.,116.,100.,23.);
+// After updating Max to 8.3 receive~ error on load ' patching_rect is not a valid attribute argument'
+
+var saudio = this.patcher.newdefault(208,116,'receive~','audio');
 var meter = this.patcher.newdefault(185.5,113.,'live.meter~','@presentation',1,'@orientation',1,'@presentation_rect',150.,37.,100.,5.,'@patching_rect',185.5,113.,90.,5.);
 
 this.patcher.connect(saudio,0,meter,0);
@@ -44,13 +45,21 @@ function wrld(param) {
     this.patcher.connect(rcoda,0,movie_route,0);
     var monde = this.patcher.newdefault(275.,304.,'jit.gl.node','sigv','@name','monde');
     var geo = this.patcher.newdefault(99,404.5,'geo');
+    geo.varname = "geo";
     var aio = this.patcher.newdefault(0,0,'aio');
+    aio.varname = "aio";
     var model = this.patcher.newdefault(0,0,'model');
+    model.varname = "model";
     var proc = this.patcher.newdefault(0,0,'proc');
+    proc.varname = "proc";
     var light = this.patcher.newdefault(0,0,'light');
+    light.varname = "light";
     var tilde = this.patcher.newdefault(0,0,'tilde');
+    tilde.varname = "tilde";
     var bfg = this.patcher.newdefault(0,0,'bfg');
+    bfg.varname = "bfg";
     var terminal = this.patcher.newdefault(0,0,'terminal');
+    terminal.varname = "terminal";
 
     outlet(0,'light','enable',1);
     outlet(0,'light','activate',0);
@@ -124,18 +133,37 @@ function aio() {
 
 function geo() {
   var geo = this.patcher.newdefault(99,404.5,'geo');
+  geo.varname = "geo";
+}
+
+function plato() {
+  var plato = this.patcher.newdefault(99,454.5,'plato');
+  plato.varname = "plato";
 }
 
 function model() {
   var model = this.patcher.newdefault(0,0,'model');
+  model.varname = "model";
+}
+
+function tex0() {
+  var tex0 = this.patcher.newdefault(0,0,'tex0');
+  tex0.varname = "tex0";
 }
 
 function proc() {
   var proc = this.patcher.newdefault(0,0,'proc');
+  proc.varname = "proc";
 }
 
 function terra() {
   var terra = this.patcher.newdefault(0,0,'terra');
+  terra.varname = "terra";
+}
+
+function sky() {
+  var sky = this.patcher.newdefault(0,0,'sky');
+  sky.varname = "sky";
 }
 
 function nurbs() {
@@ -144,68 +172,90 @@ function nurbs() {
 
 function graph() {
   var graph = this.patcher.newdefault(0,0,'graph');
+  graph.varname = "graph";
 }
 
 function sketch() {
   var sketch = this.patcher.newdefault(0,0,'sketch');
+  sketch.varname = "sketch";
 }
 
 // init dynamics
 function lorenz() {
   var lorenz = this.patcher.newdefault(0,0,'lorenz-system');
+  lorenz.varname = "lorenz";
 }
 
 function burkeshaw() {
   var burkeshaw = this.patcher.newdefault(0,0,'burke-shaw-system');
+  burkeshaw.varname = "burkeshaw";
 }
 
 // init systems environment
 function light() {
   var light = this.patcher.newdefault(0,0,'light');
+  light.varname = "light";
 }
 
 function tilde() {
   var tilde = this.patcher.newdefault(0,0,'tilde');
+  tilde.varname = "tilde";
 }
 
 function bfg() {
   var bfg = this.patcher.newdefault(0,0,'bfg');
+  bfg.varname = "bfg";
 }
 
 function grain() {
   var grain = this.patcher.newdefault(0,0,'grain');
-}
-
-function lttp() {
-  var lttp = this.patcher.newdefault(0,0,'lttp');
-}
-
-function osc() {
-  var osc = this.patcher.newdefault(99,354.5,'osc');
+  grain.varname = "grain";
 }
 
 function midi() {
   var midi = this.patcher.newdefault(0,0,'midi');
+  midi.varname = "midi";
+}
+
+function osc() {
+  var osc = this.patcher.newdefault(99,354.5,'osc');
+  osc.varname = "osc";
 }
 
 function specs() {
   var specs = this.patcher.newdefault(0,0,'specs');
+  specs.varname = "specs";
 }
 
 function som() {
-  var so = this.patcher.newdefault(0,0,'som');
+  var som = this.patcher.newdefault(0,0,'som');
+  som.varname = "som";
 }
 
 function terminal() {
   var terminal = this.patcher.newdefault(0,0,'terminal');
+  terminal.varname = "terminal";
 }
 
 function orca() {
   var orca = this.patcher.newdefault(0,0,'orca');
+  orca.varname = "orca";
 }
 
 function markov() {
   var markov = this.patcher.newdefault(0,0,'markov');
+  markov.varname = "markov";
+}
+
+function hydra() {
+  var hydra = this.patcher.newdefault(0,0,'hydra');
+  var hydrapco = this.patcher.newdefault(0,0,'pcontrol');
+  this.patcher.connect(hydrapco,0,cv,0);
+  var rcoda = this.patcher.newdefault(0,0,'r','coda');
+  var hydractrl1 = this.patcher.newdefault(0,0,'route','hydractrl');
+  this.patcher.connect(rcoda,0,hydractrl1,0);
+  this.patcher.connect(hydractrl1,0,hydrapco,0);
+  hydra.varname = "hydra";
 }
 
 function cv() {
@@ -216,14 +266,27 @@ function cv() {
   var ctrl1 = this.patcher.newdefault(0,0,'route','ctrl');
   this.patcher.connect(rcoda,0,ctrl1,0);
   this.patcher.connect(ctrl1,0,pco,0);
+  cv.varname = "cv";
 }
 
 function count() {
   var count = this.patcher.newdefault(0,0,'count');
+  count.varname = "count";
 }
 
 function asl() {
   var asl = this.patcher.newdefault(0,0,'asl');
+  asl.varname = "asl";
+}
+
+function octet() {
+  var octet = this.patcher.newdefault(0,0,'octet');
+  octet.varname = "octet";
+}
+
+function perc() {
+  var perc = this.patcher.newdefault(0,0,'perc');
+  perc.varname = "perc";
 }
 
 // sigv composition modes
@@ -457,3 +520,5 @@ function burkeObject() {
   outlet(0,'burkeshaw','mesh','rotatexyz',0,0,-57);
   outlet(0,'burkeshaw','^',10.,4.272,0.01);
 }
+
+osc();
