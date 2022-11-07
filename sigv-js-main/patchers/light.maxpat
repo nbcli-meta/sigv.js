@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 3,
-			"revision" : 0,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -74,13 +74,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 3,
-							"revision" : 0,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 1511.0, 522.0, 476.0, 657.0 ],
+						"rect" : [ 1130.0, 541.0, 476.0, 657.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -239,7 +239,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 105.0, 604.5, 131.0, 37.0 ],
-									"text" : "position 1.176565 -0.074328 1.784972"
+									"text" : "position 1.388134 0.542644 0.319909"
 								}
 
 							}
@@ -818,11 +818,11 @@
 				"box" : 				{
 					"id" : "obj-7",
 					"maxclass" : "newobj",
-					"numinlets" : 6,
-					"numoutlets" : 6,
-					"outlettype" : [ "", "", "", "", "", "" ],
-					"patching_rect" : [ 35.0, 101.0, 211.0, 23.0 ],
-					"text" : "route activate gs bfg minpos maxpos"
+					"numinlets" : 7,
+					"numoutlets" : 7,
+					"outlettype" : [ "", "", "", "", "", "", "" ],
+					"patching_rect" : [ 35.0, 101.0, 219.0, 23.0 ],
+					"text" : "route activate gs bfg minpos maxpos aio"
 				}
 
 			}
@@ -942,7 +942,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-13", 2 ],
-					"midpoints" : [ 198.099999999999994, 129.0, 97.5, 129.0 ],
+					"midpoints" : [ 177.833333333333343, 129.0, 97.5, 129.0 ],
 					"source" : [ "obj-7", 4 ]
 				}
 
@@ -950,7 +950,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-13", 1 ],
-					"midpoints" : [ 159.699999999999989, 129.0, 76.5, 129.0 ],
+					"midpoints" : [ 144.5, 129.0, 76.5, 129.0 ],
 					"source" : [ "obj-7", 3 ]
 				}
 
@@ -958,7 +958,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-13", 0 ],
-					"midpoints" : [ 121.299999999999997, 129.0, 55.5, 129.0 ],
+					"midpoints" : [ 111.166666666666671, 129.0, 55.5, 129.0 ],
 					"source" : [ "obj-7", 2 ]
 				}
 
@@ -966,15 +966,15 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-38", 0 ],
-					"midpoints" : [ 236.5, 171.0, 91.5, 171.0 ],
-					"source" : [ "obj-7", 5 ]
+					"midpoints" : [ 244.5, 171.0, 91.5, 171.0 ],
+					"source" : [ "obj-7", 6 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-40", 0 ],
-					"midpoints" : [ 82.900000000000006, 254.0, 44.5, 254.0 ],
+					"midpoints" : [ 77.833333333333343, 254.0, 44.5, 254.0 ],
 					"source" : [ "obj-7", 1 ]
 				}
 
@@ -988,6 +988,8 @@
 
 			}
  ],
+		"dependency_cache" : [  ],
+		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "AudioStatus_Menu",
 				"default" : 				{
