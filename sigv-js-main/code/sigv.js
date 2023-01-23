@@ -45,6 +45,14 @@ function aio() {
   var aio = this.patcher.newdefault(99,369,'aio');
 }
 
+function lfo() {
+  var lfo = this.patcher.newdefault(0,0,'lfo');
+}
+
+function synth() {
+  var synth = this.patcher.newdefault(0,0,'synth');
+}
+
 function geo() {
   var geo = this.patcher.newdefault(204,344,'geo');
   geo.varname = "geo";
@@ -169,6 +177,7 @@ function hydra() {
   var hydractrl1 = this.patcher.newdefault(0,0,'route','hydractrl');
   this.patcher.connect(rcoda,0,hydractrl1,0);
   this.patcher.connect(hydractrl1,0,hydrapco,0);
+  this.patcher.connect(hydrapco,0,hydra,0);
   hydra.varname = "hydra";
 }
 
@@ -454,3 +463,4 @@ function wrld(param) {
     outlet(0,'gibwo',1);
   }
 }
+
