@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 3,
-			"revision" : 0,
+			"minor" : 5,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 833.0, 452.0, 418.0, 791.0 ],
+		"rect" : [ 626.0, 412.0, 418.0, 791.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,6 +39,19 @@
 		"subpatcher_template" : "[ M ] Slate",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"comment" : "mult",
+					"id" : "obj-39",
+					"index" : 13,
+					"maxclass" : "inlet",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 382.0, 400.0, 30.0, 30.0 ]
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-33",
 					"maxclass" : "newobj",
@@ -170,8 +183,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -677,8 +690,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1154,8 +1167,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1745,13 +1758,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-27",
-					"linecount" : 2,
+					"linecount" : 3,
 					"maxclass" : "newobj",
 					"numinlets" : 8,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 50.166666666666671, 664.0, 332.0, 37.0 ],
-					"text" : "jit.gl.material @diffuse_model lambert @specular_model toon @mat_diffuse 1 1 1 1 @shininess 20 @heightmap_mode vtf"
+					"patching_rect" : [ 50.166666666666671, 654.0, 358.0, 52.0 ],
+					"text" : "jit.gl.material @diffuse_model lambert @specular_model toon @mat_diffuse 0.5 0.5 0.5 1 @mat_emission 0.1 0.1 0.1 @shininess 20 @heightmap_mode vtf"
 				}
 
 			}
@@ -1762,8 +1775,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_matrix", "" ],
-					"patching_rect" : [ 23.5, 59.0, 379.0, 23.0 ],
-					"text" : "jit.gl.gridshape monde @shape sphere @dim 200 200 @matrixoutput 1"
+					"patching_rect" : [ 23.5, 59.0, 371.0, 23.0 ],
+					"text" : "jit.gl.gridshape monde @shape torus @dim 200 200 @matrixoutput 1"
 				}
 
 			}
@@ -2048,6 +2061,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-3", 0 ],
+					"source" : [ "obj-39", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
 					"midpoints" : [ 350.5, 297.5, 304.5, 297.5 ],
 					"source" : [ "obj-4", 0 ]
@@ -2087,7 +2107,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-27", 2 ],
-					"midpoints" : [ 79.666666666666671, 617.0, 149.095238095238102, 617.0 ],
+					"midpoints" : [ 79.666666666666671, 617.0, 156.523809523809518, 617.0 ],
 					"source" : [ "obj-6", 2 ]
 				}
 

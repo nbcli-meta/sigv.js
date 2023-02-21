@@ -2116,7 +2116,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 28.0, 2048.0, 1252.0 ],
+						"rect" : [ 519.0, 343.0, 374.0, 690.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2144,6 +2144,7 @@
 						"style" : "sigv.js",
 						"subpatcher_template" : "sigv.js",
 						"assistshowspatchername" : 0,
+						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"comment" : "lfo/initial_value (0. - 1.)",
@@ -2906,8 +2907,6 @@
 
 			}
  ],
-		"dependency_cache" : [  ],
-		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "AudioStatus_Menu",
 				"default" : 				{

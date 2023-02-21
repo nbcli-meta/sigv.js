@@ -9,7 +9,7 @@ var scoda = this.patcher.newdefault(99,304.5,'s','coda');
 this.patcher.connect(this.box,0,jstrig,0);
 this.patcher.connect(jstrig,0,scoda,0);
 
-var cmd = this.patcher.newdefault(27.5,83,'textedit','@hidden',1,'@presentation',1,'@lines',1,'@keymode',1,'@tabmode',0,'@wordwrap',0,'@patching_rect',27.5,83.,248.,24.,'@presentation_rect',6.,8.,248.,24.,'@bordercolor',0,0,0,0);
+var cmd = this.patcher.newdefault(27.5,83,'textedit','@hidden',0,'@presentation',1,'@lines',1,'@keymode',1,'@tabmode',0,'@wordwrap',0,'@patching_rect',27.5,83.,248.,24.,'@presentation_rect',6.,8.,248.,24.,'@bordercolor',0,0,0,0);
 var trig = this.patcher.newdefault(160.5,27,'trigger','select','clear');
 this.patcher.connect(cmd,0,trig,0);
 
@@ -56,6 +56,10 @@ function synth() {
 function geo() {
   var geo = this.patcher.newdefault(204,344,'geo');
   geo.varname = "geo";
+}
+function lttp() {
+  var lttp = this.patcher.newdefault(0,0,'lttp');
+  lttp.varname = "lttp";
 }
 
 function plato() {
