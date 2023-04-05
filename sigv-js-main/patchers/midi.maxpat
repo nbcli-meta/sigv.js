@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 581.0, 201.0, 626.0, 454.0 ],
+		"rect" : [ 1155.0, 116.0, 626.0, 454.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -144,7 +144,6 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-17",
-					"int" : 1,
 					"maxclass" : "gswitch",
 					"numinlets" : 3,
 					"numoutlets" : 1,
@@ -162,7 +161,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
 					"patching_rect" : [ 560.0, 194.0, 33.0, 23.0 ],
-					"text" : "sel 4"
+					"text" : "sel 5"
 				}
 
 			}
@@ -305,7 +304,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
 					"patching_rect" : [ 422.0, 194.0, 33.0, 23.0 ],
-					"text" : "sel 3"
+					"text" : "sel 4"
 				}
 
 			}
@@ -472,7 +471,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
 					"patching_rect" : [ 284.0, 194.0, 33.0, 23.0 ],
-					"text" : "sel 2"
+					"text" : "sel 3"
 				}
 
 			}
@@ -508,7 +507,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
 					"patching_rect" : [ 143.0, 194.0, 33.0, 23.0 ],
-					"text" : "sel 1"
+					"text" : "sel 2"
 				}
 
 			}
@@ -1326,77 +1325,6 @@
 
 			}
  ],
-		"parameters" : 		{
-			"obj-10" : [ "amxd~[2]", "amxd~[2]", 0 ],
-			"obj-15" : [ "amxd~[3]", "amxd~[3]", 0 ],
-			"obj-7" : [ "amxd~", "amxd~", 0 ],
-			"obj-8" : [ "amxd~[1]", "amxd~", 0 ],
-			"parameterbanks" : 			{
-				"0" : 				{
-					"index" : 0,
-					"name" : "",
-					"parameters" : [ "-", "-", "-", "-", "-", "-", "-", "-" ]
-				}
-
-			}
-,
-			"inherited_shortname" : 1
-		}
-,
-		"dependency_cache" : [ 			{
-				"name" : "Analogue Drums.amxd",
-				"bootpath" : "C74:/packages/Max for Live/patchers/Max Instrument/Analogue Drums",
-				"type" : "amxd",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "Analogue Drums.amxd.maxsnap",
-				"bootpath" : "~/Documents/Max 8/Snapshots",
-				"patcherrelativepath" : "../../../Documents/Max 8/Snapshots",
-				"type" : "mx@s",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "Big Ben Bell.amxd",
-				"bootpath" : "C74:/packages/Max for Live/patchers/Max Instrument/Big Ben Bell",
-				"type" : "amxd",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "Big Ben Bell.amxd.maxsnap",
-				"bootpath" : "~/Documents/Max 8/Snapshots",
-				"patcherrelativepath" : "../../../Documents/Max 8/Snapshots",
-				"type" : "mx@s",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "Flying Waves.amxd",
-				"bootpath" : "C74:/packages/Max for Live/patchers/Max Instrument/Flying Waves",
-				"type" : "amxd",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "Flying Waves.amxd.maxsnap",
-				"bootpath" : "~/Documents/Max 8/Snapshots",
-				"patcherrelativepath" : "../../../Documents/Max 8/Snapshots",
-				"type" : "mx@s",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "Vocalese.amxd",
-				"bootpath" : "C74:/packages/Max for Live/patchers/Max Instrument/Vocalese",
-				"type" : "amxd",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "Vocalese.amxd.maxsnap",
-				"bootpath" : "~/Documents/Max 8/Snapshots",
-				"patcherrelativepath" : "../../../Documents/Max 8/Snapshots",
-				"type" : "mx@s",
-				"implicit" : 1
-			}
- ],
-		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "AudioStatus_Menu",
 				"default" : 				{
